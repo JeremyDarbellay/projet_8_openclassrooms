@@ -6,14 +6,14 @@ export default function Layout({ children }) {
     return (
       <>
         <header className={styles.header}>
-            <Link className={styles.logo} href="/">Jérémy Darbellay</Link>
+            <button className={styles.logo}><Link href="/">Jérémy Darbellay</Link></button>
             <nav>
                 <ul>
                     <li className={styles.mainLink}>
-                        <Link href="/cv">C.V.</Link>
+                        <Link href="/cv" className="link">C.V.</Link>
                     </li>
                     <li className={styles.mainLink}>
-                        <Link href="/projets">Projets</Link>
+                        <Link href="/projets" className="link">Projets</Link>
                     </li>
                 </ul>
             </nav>
@@ -22,7 +22,18 @@ export default function Layout({ children }) {
         <main>{children}</main>
 
         <footer className={styles.footer}>
-            © Darbellay Jérémy - 2023
+            <p>© Darbellay Jérémy - 2023</p>
+            <ul>
+                <li>
+                    <Link className="link" href="/">contact</Link>
+                </li>
+                <li>
+                    <Link className="link" href="/">mentions légales</Link>
+                </li>
+                <li>
+                    <Link className="link" href="/">...</Link>
+                </li>
+            </ul>
         </footer> 
       </>
     )

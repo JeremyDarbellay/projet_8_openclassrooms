@@ -8,14 +8,15 @@
 }
 
 .logo {
-  border: 1px solid white;
-  background-color: black;
-  color: white;
+  border: 1px solid var(--text-color);
+  background-color: var(--background-color);
+  color: var(--text-color);
   width: fit-content;
   padding: 0.75em 1.25em;
   margin: 0.5em;
   font-size: 1.25rem;
   text-align: center;
+  font-family: Georgia, 'Times New Roman', Times, serif;
 }
 .logo:hover {
   animation: 0.25s linear invertColor;
@@ -29,10 +30,7 @@
   padding: 0.5em 0.5em;
   font-size: 1.25rem;
 }
-.mainLink a {
-  color: white;
-  text-decoration: none;
-}
+
 .mainLink.active {
   text-decoration: underline;
 }
@@ -54,7 +52,28 @@
 }
 
 .footer {
-  background-color: black;
-  color: white;
+  background-color: var(--text-color);
+  color: var(--background-color);
   padding: 1em;
+  display: flex;
+  justify-content: space-between;
+  padding: 2rem 4rem;
+  align-items: center;
+  font-size: 1.25rem;
+}
+
+.footer, .footer ul {
+  display: flex;
+}
+.footer li {
+  list-style: none;
+  margin-right: 0.5rem;
+}
+
+
+@media (prefers-color-scheme: dark) {
+  .footer {
+    background-color: black;
+    color: var(--text-color);
+  }
 }
