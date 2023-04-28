@@ -1,13 +1,20 @@
 :root {
   --background-color: #f1efe7;
-  --text-color: #0e1018
+  --text-color: #0e1018;
+}
+:root.opposite {
+  --background-color: #0e1018;
+  --text-color: #f1efe7;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
     --background-color: #0e1018;
     --text-color: #f1efe7;
-    
+  }
+  :root.opposite {
+    --background-color: #f1efe7;
+    --text-color: #0e1018;
   }
 }
 
@@ -25,7 +32,23 @@ body {
 
 body {
   background-color: var(--background-color);
-  color: var(--text-color)
+  color: var(--text-color);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: Georgia, "Times New Roman", Times, serif;
+  margin-bottom: 1rem;
+}
+
+section {
+  padding: 2rem 4rem;
+  border-top: currentColor 1px solid;
 }
 
 a {
@@ -33,10 +56,18 @@ a {
   text-decoration: none;
 }
 
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
+:not(button) > a {
+  border: 1px solid transparent;
+  padding: 0.125rem 0.25rem;
+  box-shadow: 0 0 0 currentColor;
+  display: inline-block;
+}
+
+:not(button) > a:hover {
+  border: 1px solid currentColor;
+  transform: translate(-4px, -2px);
+  animation: 0.2s linear 0s linkShadow;
+  box-shadow: 4px 2px 0 currentColor;
 }
 
 .button {
@@ -54,6 +85,12 @@ a {
   animation: 0.2s linear 0s button;
 }
 
+@media (prefers-color-scheme: dark) {
+  html {
+    color-scheme: dark;
+  }
+}
+
 @keyframes button {
   from {
     box-shadow: currentColor 0.25em 0.25em;
@@ -61,33 +98,6 @@ a {
   to {
     box-shadow: currentColor 0.5em 0.35em;
   }
-}
-
-body {
-  font-family: Arial, Helvetica, sans-serif;
-}
-
-h1, h2, h3, h4, h5, h6 {
-  font-family:Georgia, 'Times New Roman', Times, serif;
-  margin-bottom: 1rem;
-}
-section {
-  padding: 2rem 4rem;
-  border-top: currentColor 1px solid;
-}
-
-:not(button) > a {
-  border: 1px solid transparent;
-  padding: 0.125rem 0.25rem;
-  box-shadow: 0 0 0 currentColor;
-  display: inline-block;
-}
-
-:not(button) > a:hover {
-  border: 1px solid currentColor;
-  transform: translate( -4px, -2px );
-  animation: 0.2s linear 0s linkShadow;
-  box-shadow: 4px 2px 0 currentColor;
 }
 
 @keyframes linkShadow {

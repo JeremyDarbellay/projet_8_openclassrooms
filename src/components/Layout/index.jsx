@@ -15,6 +15,12 @@ export default function Layout({ children }) {
                     <li className={styles.mainLink}>
                         <Link href="/projets" className="link">Projets</Link>
                     </li>
+                    <li className={styles.mainLink}>
+                        <Link href="/competences" className="link">Compétences</Link>
+                    </li>
+                    <li className={styles.mainLink}>
+                        <button>Color mode</button>
+                    </li>
                 </ul>
             </nav>
         </header>
@@ -28,10 +34,10 @@ export default function Layout({ children }) {
                     <Link className="link" href="/">contact</Link>
                 </li>
                 <li>
-                    <Link className="link" href="/">mentions légales</Link>
+                    <Link className="link" href="/legal_terms">mentions légales</Link>
                 </li>
                 <li>
-                    <Link className="link" href="/">...</Link>
+                    <Link className="link" href="/remerciements">remerciements</Link>
                 </li>
             </ul>
         </footer> 
