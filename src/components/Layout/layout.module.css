@@ -21,7 +21,6 @@
 .logo:hover {
   animation: 0.25s linear invertColor;
   filter: invert(1);
-  cursor: pointer;
 }
 
 .mainLink {
@@ -52,8 +51,8 @@
 }
 
 .footer {
-  background-color: var(--text-color);
-  color: var(--background-color);
+  background-color: black;
+  color: #f1efe7;
   padding: 1em;
   display: flex;
   justify-content: space-between;
@@ -70,10 +69,9 @@
   margin-right: 0.5rem;
 }
 
+.footer a {
+  color: #f1efe7;
+}
 
 @media (prefers-color-scheme: dark) {
-  .footer {
-    background-color: black;
-    color: var(--text-color);
-  }
 }
