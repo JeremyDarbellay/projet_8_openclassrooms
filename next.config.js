@@ -1,3 +1,5 @@
+const isProd = process.env.NODE_ENV === 'production'
+
 // mdx config
 const withMDX = require('@next/mdx')({
   extension: /\.mdx?$/,
@@ -15,11 +17,11 @@ const withMDX = require('@next/mdx')({
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   distDir: 'build',
-  basePath: '/projet_8_openclassrooms',
   // Configure pageExtensions to include md and mdx
   pageExtensions: ['js', 'jsx', 'md', 'mdx'],
   reactStrictMode: true,
   output: 'export',
+  assetPrefix: isProd ? '/projet_8_openclassrooms/' : '',
   images: {
     unoptimized: true,
   }
