@@ -21,7 +21,7 @@ const nextConfig = {
   pageExtensions: ['js', 'jsx', 'md', 'mdx'],
   reactStrictMode: true,
   output: 'export',
-  assetPrefix: isProd ? '/projet_8_openclassrooms/' : '',
+  assetPrefix: isProd ? 'https://jeremydarbellay.github.io/projet_8_openclassrooms/' : '',
   images: {
     unoptimized: true,
   }
