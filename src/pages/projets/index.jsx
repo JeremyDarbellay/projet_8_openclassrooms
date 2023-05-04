@@ -2,19 +2,26 @@
 import {promises as fs} from 'fs'
 import path from 'path'
 import Link from 'next/link'
+import Card from '@/components/Card'
+import styles from './projets.module.css'
 
 export default function Projets({ projects }) {
     
     return (
-        <>
+        <div className={styles.Container}>
+            
             <h1> Mes projets finalisés </h1>
-            <p>Introduction projets @TODO</p>
+            <p>Vous retrouverez mes différents projets sur cette page, plutôt que de vous innonder de différents projets, je vous en ai sélectionné trois. Vous pourrez retrouver les autres sur mon profil github <a className="link" href="https://github.com/JeremyDarbellay"> Jérémy Darbellay sur GitHub</a></p>
 
-            <ul>
-                { projects.map( (projet, index) => <Link key={index.toString()} href={`/projets/${projet.name}`}>{ projet.name }</Link> ) }
+            <ul className={styles.projectList}>
+                { projects.map( (projet, index) => 
+                    <Link key={index.toString()} href={`/projets/${projet.name}`}>
+                        <Card title={ projet.name } image={ projet.cover } body={ projet.description } footer={ projet.tags }/>
+                    </Link>
+                )}
             </ul>
 
-        </>
+        </div>
     )
 }
 
