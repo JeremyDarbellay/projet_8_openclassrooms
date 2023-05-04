@@ -5,14 +5,15 @@ import { useEffect, useState } from 'react'
 
 export default function Layout({ children }) {
 
+    const [ oppositeMode, setOppositeMode ] = useState(false);
 
     useEffect( () => {
         if (typeof window !== "undefined") {
             if (localStorage.getItem('theme') === 'opposite') document.documentElement.classList.add('opposite');
+            else setOppositeMode(true);
         }
     }, [])
 
-    const [ oppositeMode, setOppositeMode ] = useState(false);
 
     function handleToggleModeButtonClick() {
 
@@ -33,23 +34,23 @@ export default function Layout({ children }) {
             <button className={styles.logo}><Link href="/">Jérémy Darbellay</Link></button>
             <nav>
                 <ul>
-                    <li className={styles.mainLink}>
+                    <li>
                         <Link href="/curriculum_vitae" className="link">C.V.</Link>
                     </li>
-                    <li className={styles.mainLink}>
+                    <li>
                         <Link href="/projets" className="link">Projets</Link>
                     </li>
-                    <li className={styles.mainLink}>
+                    <li>
                         <Link href="/competences" className="link">Compétences</Link>
                     </li>
-                    <li className={styles.mainLink}>
-                        <button onClick={handleToggleModeButtonClick}>Color mode</button>
+                    <li>
+                        <button className='colorButton' onClick={handleToggleModeButtonClick}>color</button>
                     </li>
                 </ul>
             </nav>
         </header>
 
-        <main>{children}</main>
+        <main className="main">{children}</main>
 
         <footer className={styles.footer}>
             <p>© Darbellay Jérémy - 2023</p>

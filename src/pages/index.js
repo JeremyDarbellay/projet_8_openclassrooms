@@ -1,11 +1,9 @@
 import Head from "next/head";
 import Image from "next/image";
-import { Inter } from "next/font/google";
 
 import OfficeImage from '../assets/office.jpg';
 import styles from "@/styles/Home.module.css";
 
-const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
 
@@ -21,7 +19,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main className={`${styles.main} ${inter.className}`}>
+      <div className={`${styles.accueil} full-width`}>
         <section className={styles.mainSection}>
               <Image
                 className={styles.officeImage}
@@ -50,7 +48,7 @@ export default function Home() {
           <h2>Mes projets finalisés</h2>
           <p>Parler des projets</p>
         </section>
-      </main>
+      </div>
     </>
   );
 }

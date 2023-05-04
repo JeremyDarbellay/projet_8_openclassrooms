@@ -23,15 +23,21 @@
   filter: invert(1);
 }
 
-.mainLink {
+.header li {
   list-style: none;
   margin: 0.5em 1em;
   padding: 0.5em 0.5em;
   font-size: 1.25rem;
 }
 
-.mainLink.active {
+.header li.active {
   text-decoration: underline;
+}
+
+.header a {
+  text-decoration: none;
+  margin-left: unset;
+  margin-right: unset;
 }
 
 @keyframes invertColor {
@@ -71,6 +77,9 @@
 
 .footer a {
   color: #f1efe7;
+  text-decoration: none;
+  margin-left: unset;
+  margin-right: unset;
 }
 
 @media (prefers-color-scheme: dark) {

@@ -18,6 +18,62 @@
   }
 }
 
+.colorButton {
+  border-radius: 8px;
+  padding: 4px 8px;
+  color: var(--text-color);
+  background:  var(--background-color);
+  border: currentColor 1px solid;
+  box-shadow:  3px 3px 0px  var(--text-color);
+  transform: translate(-3px, -3px);
+  font-size: inherit;
+  font-family: inherit;
+}
+
+.colorButton.animated {
+  animation: 0.5s linear 0s colorButton;
+}
+
+@keyframes colorButton {
+  from {
+    transform: translate(-3px, -3px);
+    box-shadow: 3px 3px 0 currentColor,
+                2px 3px 0 currentColor;
+  }
+  to {
+    box-shadow: 0 0 0 var(--text-color);
+    transform: translate(0, 0);
+  }
+}
+
+/*
+.opposite .colorButton {
+  box-shadow: unset;
+  transform: translate(0, 0);
+  animation: 0.25s linear 0s colorButton;
+}
+
+@keyframes colorButton {
+  from {
+    transform: translate(-3px, -3px);
+    box-shadow: 3px 3px 0 currentColor;
+  }
+  to {
+    box-shadow: 0 0 0 var(--text-color);
+    transform: translate(0, 0);
+  }
+}
+@keyframes colorButtonReverse {
+  from {
+    box-shadow: 0 0 0 var(--text-color);
+    transform: translate(0, 0);
+  }
+  to {
+    transform: translate(-3px, -3px);
+    box-shadow: 3px 3px 0 currentColor;
+  }
+} */
+
 * {
   box-sizing: border-box;
   padding: 0;
@@ -56,14 +112,21 @@ a {
   text-decoration: none;
 }
 
-:not(button) > a {
+a.link {
+  text-decoration: dotted;
+  text-decoration-line: underline;
+  margin-left: 4px;
+  margin-right: 4px;
+}
+
+:not(button) > a.link {
   border: 1px solid transparent;
   padding: 0.125rem 0.25rem;
   box-shadow: 0 0 0 currentColor;
   display: inline-block;
 }
 
-:not(button) > a:hover {
+:not(button) > a.link:hover {
   border: 1px solid currentColor;
   transform: translate(-4px, -2px);
   animation: 0.2s linear 0s linkShadow;
@@ -84,6 +147,17 @@ a {
 .button:hover {
   box-shadow: currentColor 0.5em 0.35em;
   animation: 0.2s linear 0s button;
+}
+
+.mdx {
+  padding: 2em 4em;
+}
+.mdx p, ul {
+  margin-left: 1em;
+  margin-bottom: 1em;
+}
+.mdx li {
+  margin-left: 1em;
 }
 
 @media (prefers-color-scheme: dark) {
