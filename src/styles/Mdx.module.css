@@ -1,0 +1,62 @@
+/* file for mdx styling */
+.mdx {
+  padding: 2em 4em;
+  line-height: 1.5;
+}
+.mdx p,
+.mdx ul {
+  margin-left: 1em;
+  margin-bottom: 1em;
+}
+.mdx li {
+  margin-left: 1em;
+}
+
+.mdx a {
+  text-decoration: dotted;
+  text-decoration-line: underline;
+  margin-left: 2px;
+  margin-right: 1px;
+}
+
+.mdx :not(button) > a {
+  border: 1px solid transparent;
+  padding: 0 3px;
+  box-shadow: 0 0 0 currentColor;
+  display: inline-block;
+}
+
+.mdx :not(button) > a:hover {
+  border: 1px solid currentColor;
+  transform: translate(-4px, -2px);
+  animation: 0.2s linear 0s linkShadow;
+  box-shadow: 4px 2px 0 currentColor;
+}
+
+@keyframes linkShadow {
+  from {
+    transform: translate(0, 0);
+    box-shadow: 0 0 0 currentColor;
+  }
+  to {
+    transform: translate(-4px, -2px);
+    box-shadow: 4px 2px 0 currentColor;
+  }
+}
+
+.mdx img {
+  border: 1px solid var(--text-color);
+}
+
+.mdx .imgCenter {
+  margin: auto;
+  display: block;
+}
+
+.mdx h1 {
+  text-align: center;
+}
+
+.mdx h1, .mdx h2, .mdx h3, .mdx h4 {
+  margin-top: 1rem;
+}

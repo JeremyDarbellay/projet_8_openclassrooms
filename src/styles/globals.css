@@ -18,61 +18,12 @@
   }
 }
 
-.colorButton {
-  border-radius: 8px;
-  padding: 4px 8px;
-  color: var(--text-color);
-  background:  var(--background-color);
-  border: currentColor 1px solid;
-  box-shadow:  3px 3px 0px  var(--text-color);
-  transform: translate(-3px, -3px);
-  font-size: inherit;
-  font-family: inherit;
+code {
+  color: var(--background-color);
+  background-color: var(--text-color);
+  padding: 2px 6px;
+  font-size: 0.9rem;
 }
-
-.colorButton.animated {
-  animation: 0.5s linear 0s colorButton;
-}
-
-@keyframes colorButton {
-  from {
-    transform: translate(-3px, -3px);
-    box-shadow: 3px 3px 0 currentColor,
-                2px 3px 0 currentColor;
-  }
-  to {
-    box-shadow: 0 0 0 var(--text-color);
-    transform: translate(0, 0);
-  }
-}
-
-/*
-.opposite .colorButton {
-  box-shadow: unset;
-  transform: translate(0, 0);
-  animation: 0.25s linear 0s colorButton;
-}
-
-@keyframes colorButton {
-  from {
-    transform: translate(-3px, -3px);
-    box-shadow: 3px 3px 0 currentColor;
-  }
-  to {
-    box-shadow: 0 0 0 var(--text-color);
-    transform: translate(0, 0);
-  }
-}
-@keyframes colorButtonReverse {
-  from {
-    box-shadow: 0 0 0 var(--text-color);
-    transform: translate(0, 0);
-  }
-  to {
-    transform: translate(-3px, -3px);
-    box-shadow: 3px 3px 0 currentColor;
-  }
-} */
 
 * {
   box-sizing: border-box;
@@ -90,6 +41,15 @@ body {
   background-color: var(--background-color);
   color: var(--text-color);
   font-family: Arial, Helvetica, sans-serif;
+}
+body > div#__next {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+
+}
+body main {
+  flex-grow: 1;
 }
 
 h1,
@@ -149,15 +109,9 @@ a.link {
   animation: 0.2s linear 0s button;
 }
 
-.mdx {
-  padding: 2em 4em;
-}
-.mdx p, ul {
-  margin-left: 1em;
-  margin-bottom: 1em;
-}
-.mdx li {
-  margin-left: 1em;
+img {
+  max-width: 100%;
+  height:auto;
 }
 
 @media (prefers-color-scheme: dark) {

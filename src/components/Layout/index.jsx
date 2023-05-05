@@ -6,24 +6,34 @@ import { useEffect, useState } from 'react'
 export default function Layout({ children }) {
 
     const [ oppositeMode, setOppositeMode ] = useState(false);
+    const [animated, setAnimated] = useState(false);
+    const animationInProgress = animated ? styles.animated : '';
 
     useEffect( () => {
-        if (typeof window !== "undefined") {
-            if (localStorage.getItem('theme') === 'opposite') document.documentElement.classList.add('opposite');
-            else setOppositeMode(true);
+        if (document.documentElement.classList.contains("opposite")) {
+                setOppositeMode(true);
         }
     }, [])
 
-
     function handleToggleModeButtonClick() {
 
-        document.documentElement.classList.toggle('opposite');
+        setAnimated(true)
 
-        if (typeof window !== "undefined") {
-            localStorage.getItem('theme') === 'opposite' ? localStorage.removeItem('theme') : localStorage.setItem('theme', 'opposite');
-        }
+        setTimeout(() => {
 
-        setOppositeMode(!oppositeMode);
+            document.documentElement.classList.toggle('opposite');
+
+            if (typeof window !== "undefined") {
+                localStorage.getItem('theme') === 'opposite' ? localStorage.removeItem('theme') : localStorage.setItem('theme', 'opposite');
+            }
+            
+
+            setOppositeMode(!oppositeMode);
+
+            setAnimated(false)
+
+        }, 100)
+
 
     }
 
@@ -44,7 +54,7 @@ export default function Layout({ children }) {
                         <Link href="/competences" className="link">Compétences</Link>
                     </li>
                     <li>
-                        <button className='colorButton' onClick={handleToggleModeButtonClick}>color</button>
+                        <button className={`${animationInProgress} ${styles.colorButton}`} onClick={handleToggleModeButtonClick}>thème</button>
                     </li>
                 </ul>
             </nav>

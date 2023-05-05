@@ -40,6 +40,40 @@
   margin-right: unset;
 }
 
+.colorButton {
+  border-radius: 8px;
+  padding: 4px 8px;
+  color: var(--text-color);
+  background:  var(--background-color);
+  border: currentColor 1px solid;
+  box-shadow:  3px 3px 0px  var(--text-color);
+  transform: translate(-3px, -3px);
+  font-size: inherit;
+  font-family: inherit;
+  cursor: pointer;
+}
+
+.colorButton.animated {
+  animation: 0.10s linear 0s colorButton;
+}
+
+@keyframes colorButton {
+  0% {
+    transform: translate(-3px, -3px);
+    box-shadow: 3px 3px 0 currentColor,
+                2px 3px 0 currentColor;
+  }
+  50% {
+    box-shadow: 0 0 0 var(--text-color);
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(-3px, -3px);
+    box-shadow: 3px 3px 0 currentColor,
+                2px 3px 0 currentColor;
+  }
+}
+
 @keyframes invertColor {
   from {
     filter: invert(0);

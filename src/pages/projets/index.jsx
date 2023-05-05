@@ -37,11 +37,11 @@ export async function getStaticProps() {
 
     let projects = [];
 
-    items.forEach( (file) => {
-        let projet = require(`./${file}`);
+    items.forEach( async (file) => {
+        let projet = await require(`./${file}`);
         projects.push(projet.meta);
 
     })
-
+    console.log(projects)
     return { props: { projects } }
 }
