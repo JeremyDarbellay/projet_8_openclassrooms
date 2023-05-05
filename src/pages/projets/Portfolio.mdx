@@ -1,7 +1,56 @@
-export const meta = {
-    name: 'Portfolio',
-    description: "Ce projet, n'est ni plus, ni moins que ce site, sur lequel vous vous trouvez. Vous découvrirez comment et pourquoi il a été fait ainsi",
-    cover: '',
-    tags: 'Next',
-    sources: 'https://github.com/JeremyDarbellay/projet_8_openclassrooms'
+import styles from "@/styles/Mdx.module.css";
+import officeImage from "@/assets/portfolio-beta.png";
+import Image from "next/image";
+
+export default function Layout({ children }) {
+  return <div className={styles.mdx}>{children}</div>;
 }
+
+export const meta = {
+  name: "Portfolio",
+  description:
+    "Ce projet, n'est ni plus, ni moins que ce site, sur lequel vous vous trouvez. Vous découvrirez comment et pourquoi il a été fait ainsi",
+  cover: officeImage,
+  tags: "Next",
+  sources: "https://github.com/JeremyDarbellay/projet_8_openclassrooms",
+};
+
+# Mon Portfolio, mon projet
+
+<Image
+  src={officeImage}
+  alt="image de la page d'accueil du site"
+  width={1000}
+  className={styles.imgCenter}
+/>
+
+## Présentation de mon Portfolio
+
+Mon portfolio est un site assez simple conçu via quelques technologies connues, je ne me suis pas éloigné des sentiers battus dans ce projet.<br />
+Pour commencer, il n'y a pas de back-end, c'est uniquement un front, celui-ci a été construit via le framework [Next.js](https://nextjs.org/), auquel j'ai ajouté [mdx](https://mdxjs.com/) pour faciliter la création de pages de projets.<br />
+
+Le but de ce projet étant de construire un site agréable, avec peu de pages, je n'ai pas eu besoin d'autres ajouts, vous retrouverez l'intégralité du code sur github en suivant ce lien : [répertoire GitHub du portfolio](https://github.com/JeremyDarbellay/projet_8_openclassrooms).
+
+Afin de faciliter et fluidifier la publication de ce portfolio, nous utilisons GithubPages, associé à un workflow automatisé qui va dans un premier temps lancer la commande `npm run build` puis push le dossier "build" ainsi généré vers une branche séparée appelée "build". Ce que vous visualisez est le build statique résultant. Ce processus se lance automatiquement à chaque événement de poussée.
+
+## Points clefs du projet
+
+Dans ce projet, ce sont les choix à faire qui ont été l'étape la plus difficile à mes yeux, il a fallu choisir les technologies à adopter et l'organisation du projet. Ici, j'ai volontairement choisi une organisation simple, des technologies simples afin d'éviter une application trop complexe et trop lourde.
+
+Ensuite, le design a été également un point difficile, je ne suis pas designer de base, ainsi, il n'a pas été facile, j'ai opté pour un site en noir et blanc élégant, épuré et j'ai cherché à ajouter de l'interactivité avec quelques petites animations, par-ci par là afin de rendre le site plus amusant tout en restant esthétiquement joli. Bien sûr ce sont mes goûts et comme on dit, les goûts et les couleurs ça ne se discute pas.
+
+Pour finir, une fois le style et les choix construits, il ne restait plus qu'à mettre en place, l'utilisation de mdx, le routage et l'adaptation à GH pages est toujours un petit défi en soit. Nous ne maîtrisons pas l'hébergement, ainsi, il a fallu ruser pour certaines routes et pour la mise en production. Fort heureusement, Next.js permet d'assez facilement s'adapter à ces contraintes.
+
+## Ce que j'ai tiré de ce projet
+
+Pour commencer, ce projet, m'a apporté une vue plus globale d'une mise en production d'un site vitrine, jusqu'à présent, au cours des projets de ma formation OpenClassrooms, de nombreux détails étaient pris en charge par le projet en lui-même, la charte graphique, l'absence d'hébergement, le processus à adopter. Ici, je suis seul maître à bords, je choisis la stack, la charte et les pratiques à adopter.<br />
+Donc il est ainsi bien plus gratifiant de finaliser ce projet en sachant qu'il provient entièrement de nous-même.
+
+Ensuite, j'ai également pu expérimenter avec Next.js et commencer à l'utiliser, de mon point dde vue, ce framework est une bénédiction et épargne de nombreux maux de têtes, le routing est facilité, la génération de site statique également, etc... J'ai choisi de ne pas trop m'éloigner de ma zone de confort afin de développer sans accrocs, l'avenir me permettra de développer d'autres compétences et d'autres technologies.
+
+Enfin, depuis longtemps je souhaitais pouvoir publier via le langage markdown que je trouve particulièrement agréable d'utilisation, ce projet, m'a permit de concrétiser cette envie.
+
+## Et ensuite ?
+
+Et bien, c'est le début de mon parcours de développeur, d'autres projets verront le jour, qui sait où cela me mènera ? <br />
+Quant à vous, vous pouvez découvrir mes autres projets comme celui de [Kasa](/projets/Kasa), qui est un front-end créé via la librairie React, ou celui de [Nina Carducci](/projets/NinaCarducci), où l'enjeu était l'optimisation pour les sites de référencements (SEO)

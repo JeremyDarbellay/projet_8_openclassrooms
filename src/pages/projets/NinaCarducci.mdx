@@ -1,9 +1,19 @@
+import styles from "@/styles/Mdx.module.css";
+import ninaImage from "@/assets/banner-nina.jpg";
+import Image from "next/image";
+
+export default function Layout({ children }) {
+  return <div className={styles.mdx}>{children}</div>;
+}
+
 export const meta = {
     name: 'NinaCarducci',
     description: "amélioration de l'optimisation du référencement sur les moteurs de recherches. ",
-    cover: '',
+    cover: ninaImage,
     tags: 'SEO, Accessibilité, Débogage',
     sources: 'https://github.com/JeremyDarbellay/projet_5_openclassrooms'
 }
 
-# Coucou Nina
+# Nina Carducci, photographe professionnelle à Bordeaux
+
+<Image src={ninaImage} alt="bannière de Nina" width={1000} className={styles.imgCenter}/>
