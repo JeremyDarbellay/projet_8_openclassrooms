@@ -17,3 +17,29 @@ export const meta = {
 # Nina Carducci, photographe professionnelle à Bordeaux
 
 <Image src={ninaImage} alt="bannière de Nina" width={1000} className={styles.imgCenter}/>
+
+## Une affaire d'optimisation
+
+Nina Carducci es tune photographe professionnelle, à ce titre son site internet contient de nombreuses photographies. La vitesse de chargement en est grandement impacté et le site n'est malheureusement pas conformes aux exigences d'accessibilité modernes. Vous pouvez voir le résultat à cette adresse : [Site original de Nina Carducci](https://nina-carducci.github.io/). Mon travail dans ce projet sera donc d'optimiser le site pour le référencement sur les moteurs de recherches, ainsi que de corriger quelques petits bogues et faire un travail d'accessibilité.
+
+L'enjeu était donc d'optimiser le chargement des images et scripts afin d'obtenir une bonne note aux audits lighthouse et gtmetrix. Et vous pourrez constater le résultat à cette adresse : [Projet de Nina](https://jeremydarbellay.github.io/projet_5_openclassrooms).
+
+## L'optimisation, une affaire de priorité
+
+Il n'était pas non plus question de passer un temps énorme ou de réécrire totalement le site de Nina. Ainsi, dans ce projet, je me suis concentré principalement sur ces deux points : l'accessibilité et le chargement des fichiers.
+
+Bien évidemment la priorité était de corrigé les bogues, j'ai du me plonger dans jquery, une technologie que je n'utilise pas, mais cela est resté rapide et simple, l'erreur était minime !
+
+J'ai décidé de suivre les recommandation de google, utilisé le format webp, redimensionné et compressé les images. Puis je me suis attelé à l'accessibilité.
+Il était important pour moi de rendre un site entièrement navigable au clavier et adapté aux lecteurs d'ecrans. J'ai donc ajouté de nombreuses balises sémantiques, des rôles arias et des description, l'optimisation pour les SEO n'étant pas suffisante à mes yeux.
+Car oui, si l'ont suit strictement les recommandation de google, aucune utilité de permettre aux utilisateurs d'utiliser les fonctionnalités avancées.
+
+## Une plus grande sensibilité aux utilisateurs de technologies d'assistance
+
+Grâce à ce projet, j'ai gagné en maturité et en sensibilité. N'ayant pas recours aux technologies d'assistances numériques, je n'ai jamais porté une grande attention à ces utilisateurs, cela ne veut pas dire que je ne respectais pas la plupart des principes de l'accessibilité, mais plutôt que j'ai découvert de nouvelles pratiques et une approche légèrement différente de la construction d'un site internet.
+
+J'ai également apprivoisé le format webp et quelques outils d'optimisations simple des images comme mogrify. 
+
+## Et ensuite ?
+
+Et bien, grandit par ce projet, j'ai orienté la plupart de mes tests vers l'accessibilité dans mon [projet React pour Kasa](/projets/Kasa), en visitant les sources, vous trouverez mes tests (dans chaque dossier de composant), ceux-ci sont concentrés sur les rôles aria et les éléments perceptibles par l'utilisateur, plutôt que la sortie d'une fonction.
