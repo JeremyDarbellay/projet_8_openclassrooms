@@ -2,6 +2,8 @@ import styles from "@/styles/Mdx.module.css";
 import kasaImage from "@/assets/banner-kasa.png";
 import Image from "next/image";
 
+import ProjectInfo from '@/components/ProjectInfo'
+
 export default function Layout({ children }) {
   return <div className={styles.mdx}>{children}</div>;
 }
@@ -11,12 +13,16 @@ export const meta = {
     description: `Construction d'une plateforme web de location d'appartements entre particuliers afin d'effectuer la migration de ASP.NET vers une stack javascript basée sur Node et React. Ce projet ne contiendra que la partie Front-End avec React et React-Router, sans autres dépendances.`,
     cover: kasaImage,
     tags: 'React, ReactRouter, Tests',
-    sources: 'https://github.com/JeremyDarbellay/projet_6_openclassrooms'
+    sources: 'https://github.com/JeremyDarbellay/projet_6_openclassrooms',
+    demo: 'https://jeremydarbellay.github.io/projet_6_openclassrooms/'
 }
 
 # Kasa - Location d'appartements entre particuliers
 
-<Image src={kasaImage} alt="bannière de Kasa" className={styles.imgCenter}/>
+<div className={styles.projectHeader}>
+  <Image src={kasaImage} alt="bannière de Kasa" />
+  <ProjectInfo meta={meta} />
+</div>
 
 ## Découverte de React, via le projet de Kasa
 

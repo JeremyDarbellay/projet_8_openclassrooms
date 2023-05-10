@@ -60,3 +60,30 @@
 .mdx h1, .mdx h2, .mdx h3, .mdx h4 {
   margin-top: 1rem;
 }
+
+.projectHeader {
+  display: flex;
+  border-top: currentColor 1px solid;
+  border-bottom: currentColor 1px solid;
+  gap: 2.5rem;
+  align-items: stretch;
+}
+
+.projectHeader img {
+  border : none;
+  flex-grow: 1;
+  max-width: 66%;
+}
+
+.projectHeader article {
+  max-width: 33%;
+}
+
+@media (max-width: 600px) {
+  .projectHeader {
+    flex-direction: column;
+  }
+  .projectHeader img, .projectHeader  article {
+    max-width: 100%;
+  }
+}

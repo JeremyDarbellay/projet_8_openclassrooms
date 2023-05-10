@@ -1,10 +1,18 @@
 .header {
   display: flex;
-  justify-content: space-between;
   align-items: center;
 }
+
+.header nav, .header .toggleNav {
+  min-width: 33%;
+  margin-left: auto;
+  margin-right: 0.5rem;
+
+}
+
 .header ul {
   display: flex;
+  justify-content: space-evenly;
 }
 
 .logo {
@@ -12,8 +20,9 @@
   background-color: var(--background-color);
   color: var(--text-color);
   width: fit-content;
-  padding: 0.75em 1.25em;
+  padding: 0.75em 1em;
   margin: 0.5em;
+  margin-right: 0;
   font-size: 1.25rem;
   text-align: center;
   font-family: Georgia, 'Times New Roman', Times, serif;
@@ -25,8 +34,7 @@
 
 .header li {
   list-style: none;
-  margin: 0.5em 1em;
-  padding: 0.5em 0.5em;
+  margin: 0.25rem 0.375rem;;
   font-size: 1.25rem;
 }
 
@@ -40,7 +48,7 @@
   margin-right: unset;
 }
 
-.colorButton {
+.colorButton, .toggleNav {
   border-radius: 8px;
   padding: 4px 8px;
   color: var(--text-color);
@@ -53,8 +61,13 @@
   cursor: pointer;
 }
 
-.colorButton.animated {
+.colorButton.animated, .toggleNav:hover.animated {
   animation: 0.10s linear 0s colorButton;
+}
+
+.header .toggleNav {
+  display: none;
+  font-size: 1.25rem;
 }
 
 @keyframes colorButton {
@@ -117,4 +130,69 @@
 }
 
 @media (prefers-color-scheme: dark) {
+}
+
+@media (max-width: 600px) {
+
+  .header {
+    flex-wrap: wrap;
+  }
+
+  .header nav {
+    display: none;
+    margin-left: 0;
+    min-width: 100%;
+  }
+
+  .header nav.visible {
+    display: block;
+  }
+
+  .header .toggleNav {
+    display: block;
+  }
+
+  .header ul {
+    flex-direction: column;
+    align-items: stretch;
+    text-align: center;
+  }
+
+  .header ul li {
+    margin: 0;
+    border-bottom: currentColor solid 1px;
+  }
+  .header ul li:first-child {
+    border-top: currentColor solid 1px;
+  }
+  .header li a, .header li button {
+    width: 100%;
+    height: 100%;;
+    padding: 1rem;
+    border: none;
+  }
+
+  .header li a:hover, .header li button:hover {
+    border: none;
+    background-color: var(--text-color);
+    color: var(--background-color)
+  }
+
+  .colorButton {
+    border-radius: unset;
+    padding: unset;
+    color: var(--text-color);
+    background:  var(--background-color);
+    border: unset;
+    box-shadow:  unset;
+    transform: unset;
+  }
+  .colorButton.animated {
+    animation: unset;
+  }
+
+  .footer {
+    flex-direction: column;
+    gap: 1rem;
+  }
 }

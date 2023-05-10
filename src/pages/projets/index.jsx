@@ -2,8 +2,8 @@
 import {promises as fs} from 'fs'
 import path from 'path'
 import Link from 'next/link'
-import Card from '@/components/Card'
-import styles from './projets.module.css'
+import styles from '@/styles/projets.module.css'
+import Image from 'next/image'
 
 export default function Projets({ projects }) {
     
@@ -13,13 +13,23 @@ export default function Projets({ projects }) {
             <h1> Mes projets finalisés </h1>
             <p>Vous retrouverez mes différents projets sur cette page, plutôt que de vous innonder de différents projets, je vous en ai sélectionné trois. Vous pourrez retrouver les autres sur mon profil github <a className="link" href="https://github.com/JeremyDarbellay"> Jérémy Darbellay sur GitHub</a></p>
 
-            <ul className={styles.projectList}>
+            <section className={styles.projectSection}>
                 { projects.map( (projet, index) => 
-                    <Link key={index.toString()} href={`/projets/${projet.name}`}>
-                        <Card title={ projet.name } image={ projet.cover } body={ projet.description } footer={ projet.tags }/>
-                    </Link>
+                    <article>
+                        <Image src={projet.cover} alt={`projet de ${projet.name}`} />
+                        <div className={styles.projectText}>
+                            <h2>{ projet.name }</h2>
+                            <p>{ projet.description } <br /><strong>{ projet.tags }</strong></p>
+                            <div>
+                                <Link key={index.toString()} href={`/projets/${projet.name}` } className={styles.button} >page du projet</Link>
+                                <Link key={index.toString()} href={`${projet.sources}`} className={styles.button} >sources du projet</Link>
+                                <Link key={index.toString()} href={`${projet.demo}`} className={styles.button} >démonstration</Link>
+                            </div>
+                        </div>
+                        
+                    </article>
                 )}
-            </ul>
+            </section>
 
         </div>
     )

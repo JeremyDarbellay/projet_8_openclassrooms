@@ -1,6 +1,7 @@
 import styles from "@/styles/Mdx.module.css";
 import officeImage from "@/assets/portfolio-beta.png";
 import Image from "next/image";
+import ProjectInfo from '@/components/ProjectInfo'
 
 export default function Layout({ children }) {
   return <div className={styles.mdx}>{children}</div>;
@@ -11,18 +12,21 @@ export const meta = {
   description:
     "Ce projet, n'est ni plus, ni moins que ce site, sur lequel vous vous trouvez. Vous découvrirez comment et pourquoi il a été fait ainsi",
   cover: officeImage,
-  tags: "Next",
+  tags: "Next, MDX",
   sources: "https://github.com/JeremyDarbellay/projet_8_openclassrooms",
+  demo: '/'
 };
 
 # Mon Portfolio, mon projet
 
-<Image
-  src={officeImage}
-  alt="image de la page d'accueil du site"
-  width={1000}
-  className={styles.imgCenter}
-/>
+<div className={styles.projectHeader}>
+  <Image
+    src={officeImage}
+    alt="image de la page d'accueil du site"
+    className={styles.imgCenter}
+  />
+  <ProjectInfo meta={meta} />
+</div>
 
 ## Présentation de mon Portfolio
 
