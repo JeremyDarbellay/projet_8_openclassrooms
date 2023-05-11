@@ -5,6 +5,11 @@ import Script from 'next/script'
 import { MDXProvider } from '@mdx-js/react'
 import Link from 'next/link'
 
+/* fontawesome */
+import { config } from '@fortawesome/fontawesome-svg-core'
+import '@fortawesome/fontawesome-svg-core/styles.css'
+config.autoAddCss = false
+
  
 const components = {
   a: Link,

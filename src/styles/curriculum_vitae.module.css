@@ -1,0 +1,165 @@
+.shadow {
+    border: 1px solid currentColor;
+    width: fit-content;
+    height: fit-content;
+    margin: 2.5rem auto;
+}
+.feuille {
+    width: 21cm;
+    height: 29.7cm;
+    word-wrap: break-word;
+    display: flex;
+    flex-direction: column;
+}
+
+
+.feuille section {
+    border-top: unset;
+    border-bottom: 1px solid currentColor;
+}
+.feuille header, .feuille section, .feuille footer {
+    padding: 1rem 1.5rem;
+}
+
+.feuille h2, .feuille h3 {
+    margin-bottom: 0.75rem;
+}
+.feuille h2 {
+    text-decoration: underline;
+}
+
+.feuille p,
+.feuille div {
+    margin-bottom: 0.75rem;
+    margin-left: 0.75rem;
+}
+/* 
+.feuille {
+    display: grid;
+    grid-template-rows: repeat(6, 1fr);
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.feuille .header {
+    grid-row: 1 / 1;
+    grid-column: 1 / 6;
+    border-bottom: 1px solid currentColor;
+}
+
+.feuille .parcours {
+    grid-row: 2 / 5;
+    grid-column: 1 / 3;
+    border-right: 1px solid currentColor;
+}
+.feuille .projets {
+    grid-row: 5 / end;
+    grid-column: 1 / 3;
+    border-bottom: unset;
+    border-right: 1px solid currentColor;
+}
+.feuille .objectifs {
+    grid-row: 2 / 2;
+    grid-column: 3 / 3;
+}
+.feuille .competences {
+    grid-column: 3 / 3;
+    grid-row: 3 / 6;
+}
+.feuille .contact {
+    grid-column: 3 / 3;
+    grid-row: 6 / 6;
+} */
+
+.feuille .mainContainer, .feuille .leftContainer, .feuille .rightContainer {
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+.leftContainer, .rightContainer {
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.leftContainer {
+    width: 66%;
+    border-right: currentColor solid 1px;
+}
+.rightContainer {
+    max-width: 33%;
+}
+.mainContainer {
+    flex-grow: 1;;
+}
+
+.feuille .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;;
+    padding: 0;
+    border-bottom: 1px solid currentColor;
+}
+.header div:first-child {
+    margin: 0;
+    padding: 0.75rem;
+}
+.header div:last-child {
+    margin: 0;
+    padding: 0.5rem;
+    max-width: 33.5%;
+}
+
+.header div:last-child h3 {
+    margin-bottom: 0.25rem;
+}
+
+.header h2 {
+    text-align: center;
+    margin: 1rem auto 0;
+    text-decoration: none;
+}
+.header h2 + h3 {
+    margin-top: 0;
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+.feuille section.projets {
+    border-bottom: none;
+}
+
+.contact p {
+    display: flex;
+    word-break: break-all;
+}
+.contact p svg {
+    margin-right: 4px;
+}
+
+.projets h3:not(:first-of-type) , .parcours h3:not(:first-of-type) {
+    border-top: 1px dashed currentColor;
+}
+.feuille .projets > *, .feuille .parcours > * {
+    padding-left: 1rem;
+}
+.projets h3, .projets h2, .parcours h3, .parcours h2 {
+    padding-top: 0.75rem;
+}
+.feuille .projets, .feuille .parcours {
+    padding: 0
+}
+.projets ul {
+    padding-left: 1.25rem;
+    margin-top: 0.5rem;
+}
+
+/** overrides */
+.feuille > .objectifs > p {
+    margin: 0;
+}
+.feuille footer.contact {
+    padding: 0.75rem;
+}
+.feuille a {
+    font-size: 1rem;
+}

@@ -10,11 +10,18 @@
     "test": "playwright test"
   },
   "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^6.4.0",
+    "@fortawesome/free-brands-svg-icons": "^6.4.0",
+    "@fortawesome/free-regular-svg-icons": "^6.4.0",
+    "@fortawesome/free-solid-svg-icons": "^6.4.0",
+    "@fortawesome/react-fontawesome": "^0.2.0",
     "@mdx-js/loader": "^2.3.0",
     "@mdx-js/react": "^2.3.0",
     "@next/mdx": "^13.3.1",
     "eslint": "8.39.0",
     "eslint-config-next": "13.3.1",
+    "html2canvas": "^1.4.1",
+    "jspdf": "^2.5.1",
     "next": "13.3.1",
     "react": "18.2.0",
     "react-dom": "18.2.0"
