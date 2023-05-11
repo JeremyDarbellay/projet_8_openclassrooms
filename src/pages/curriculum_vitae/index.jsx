@@ -8,11 +8,6 @@ import { faLinkedin, faGithub } from "@fortawesome/free-brands-svg-icons";
 import { faAt, faMobile } from "@fortawesome/free-solid-svg-icons";
 
 export default function CurriculumVitae() {
-    async function exportAsPdf() {
-        const report = new jsPDF("portrait", "pt", "a4");
-        const data = await document.querySelector("#pdf");
-        report.html(data).then(() => report.save("cv_darbellay_jeremy.pdf"));
-    }
 
     function printDocument() {
         const input = document.getElementById("pdf");
@@ -23,7 +18,7 @@ export default function CurriculumVitae() {
             pdf.addImage(imgData, "JPEG", 0, 0);
             // pdf.output("dataurlnewwindow", "cv_darbellay_jeremy.pdf");
             pdf.save("download.pdf");
-            input.style.color = "unset";
+            input.style.color = null;
         });
     }
 
@@ -31,7 +26,6 @@ export default function CurriculumVitae() {
         <>
             <h1>Curriculum Vitae</h1>
             <button onClick={printDocument}>Télécharger le PDF</button>
-            <p>feuille ici</p>
             <div className={styles.shadow}>
                 <article className={styles.feuille} id="pdf">
                     <header className={styles.header}>
