@@ -2,32 +2,71 @@ import styles from "@/styles/curriculum_vitae.module.css";
 import Link from "next/link";
 import jsPDF from "jspdf";
 import html2canvas from "html2canvas";
+import { useState } from "react";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faLinkedin, faGithub } from "@fortawesome/free-brands-svg-icons";
 import { faAt, faMobile } from "@fortawesome/free-solid-svg-icons";
 
 export default function CurriculumVitae() {
+    // to override color when using dark theme during pdf generation
+    const [pdfColor, setPdfColor] = useState(false);
+    const [animated, setAnimated] = useState(false);
+
+    function playAnimation() {
+        setAnimated(true);
+        setTimeout(() => setAnimated(false), 100);
+    }
 
     function printDocument() {
+        playAnimation();
+
+        setPdfColor(true);
         const input = document.getElementById("pdf");
-        input.style.color = "black";
         html2canvas(input).then((canvas) => {
             const imgData = canvas.toDataURL("image/png", 1);
             const pdf = new jsPDF("portrait", "pt", "a4");
             pdf.addImage(imgData, "JPEG", 0, 0);
             // pdf.output("dataurlnewwindow", "cv_darbellay_jeremy.pdf");
             pdf.save("download.pdf");
-            input.style.color = null;
+            setPdfColor(false);
         });
     }
 
     return (
         <>
-            <h1>Curriculum Vitae</h1>
-            <button onClick={printDocument}>Télécharger le PDF</button>
+            <div className={styles.title}>
+                <h1>Curriculum Vitae</h1>
+                <button
+                    className={
+                        animated
+                            ? `${styles.pdfButton} ${styles.colorButton} ${styles.animated}`
+                            : `${styles.pdfButton} ${styles.colorButton}`
+                    }
+                    onClick={printDocument}
+                >
+                    Télécharger le PDF
+                </button>
+                <button
+                    className={
+                        animated
+                            ? `${styles.pdfButtonMobile} ${styles.colorButton} ${styles.animated}`
+                            : `${styles.pdfButtonMobile} ${styles.colorButton}`
+                    }
+                    onClick={playAnimation}
+                >
+                    <a href="/cvmobile.pdf">Télécharger le PDF</a>
+                </button>
+            </div>
             <div className={styles.shadow}>
-                <article className={styles.feuille} id="pdf">
+                <article
+                    className={
+                        pdfColor
+                            ? `${styles.pdfColor} ${styles.feuille}`
+                            : styles.feuille
+                    }
+                    id="pdf"
+                >
                     <header className={styles.header}>
                         <div>
                             <h2>Darbellay Jérémy </h2>
@@ -94,40 +133,79 @@ export default function CurriculumVitae() {
                                 <h2>Projets</h2>
                                 <h3>Mon portfolio</h3>
                                 <p>
-                                    <em>Next.js, Mdx et GitHubPages</em><br/>
-                                    Développement et mise en ligne de mon portfolio 
-                                    <ul>
-                                        <li>Utilisation de Next.js pour une génération statique des pages</li>
-                                        <li>Utilisation et intégration de MDX pour une rédaction facilitée</li>
-                                        <li>Mise en ligne via GitHub, sources accessibles au public</li>
-                                        <li>Génération de PDF, thème adaptatif et autres fantaisies</li>
-                                    </ul>
+                                    <em>Next.js, Mdx et GitHubPages</em>
+                                    <br />
+                                    Développement et mise en ligne de mon
+                                    portfolio
                                 </p>
+                                <ul>
+                                    <li>
+                                        Utilisation de Next.js pour une
+                                        génération statique des pages
+                                    </li>
+                                    <li>
+                                        Utilisation et intégration de MDX pour
+                                        une rédaction facilitée
+                                    </li>
+                                    <li>
+                                        Mise en ligne via GitHub, sources
+                                        accessibles au public
+                                    </li>
+                                    <li>
+                                        Génération de PDF, thème adaptatif et
+                                        autres fantaisies
+                                    </li>
+                                </ul>
                                 <h3>
                                     Kasa - Location d'appartements entre
                                     particuliers
                                 </h3>
                                 <p>
-                                    <em>React.js et ReactRouter</em><br/>
-                                    Construction du front-end pour une site de location entre particuliers 
-                                    <ul>
-                                        <li>Utilisation de React, routage via ReactRouter</li>
-                                        <li>Pas de frameworks, ni de dépendances React ajoutées.</li>
-                                        <li>Routes dynamiques et chargement des données.</li>
-                                        <li>Respect des maquettes et client side routing</li>
-                                    </ul>
+                                    <em>React.js et ReactRouter</em>
+                                    <br />
+                                    Construction du front-end pour une site de
+                                    location entre particuliers
                                 </p>
+                                <ul>
+                                    <li>
+                                        Utilisation de React, routage via
+                                        ReactRouter
+                                    </li>
+                                    <li>
+                                        Pas de frameworks, ni de dépendances
+                                        React ajoutées.
+                                    </li>
+                                    <li>
+                                        Routes dynamiques et chargement des
+                                        données.
+                                    </li>
+                                    <li>
+                                        Respect des maquettes et client side
+                                        routing
+                                    </li>
+                                </ul>
                                 <h3>NinaCarducci</h3>
                                 <p>
-                                    <em>SEO, Optimisation et Accessibilité</em><br/>
-                                    Optimisation du site d'une photographe à bordeaux 
-                                    <ul>
-                                        <li>réduction du poids de la page (image et sources)</li>
-                                        <li>ajout référencement naturel</li>
-                                        <li>amélioration de l'accessibilité pour une navigation au clavier</li>
-                                        <li>Amélioration des scores LightHouse et GTMetrix</li>
-                                    </ul>
+                                    <em>SEO, Optimisation et Accessibilité</em>
+                                    <br />
+                                    Optimisation du site d'une photographe à
+                                    bordeaux
                                 </p>
+                                <ul>
+                                    <li>
+                                        réduction du poids de la page (image et
+                                        sources)
+                                    </li>
+                                    <li>ajout référencement naturel</li>
+                                    <li>
+                                        amélioration de l'accessibilité pour une
+                                        navigation au clavier
+                                    </li>
+                                    <li>
+                                        Amélioration des scores LightHouse et
+                                        GTMetrix
+                                    </li>
+                                </ul>
                             </section>
                         </div>
                         <div className={styles.rightContainer}>
@@ -163,7 +241,7 @@ export default function CurriculumVitae() {
                                 <h2>Contact</h2>
                                 <p>
                                     <FontAwesomeIcon icon={faAt} />{" "}
-                                    <a mailto="jeremy.darbellay@gmail.com">
+                                    <a href="mailto:jeremy.darbellay@gmail.com">
                                         jeremy.darbellay@gmail.com
                                     </a>
                                 </p>

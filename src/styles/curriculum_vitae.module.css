@@ -121,9 +121,9 @@
 .feuille .projets, .feuille .parcours {
     padding: 0
 }
-.projets ul {
-    padding-left: 1.25rem;
-    margin-top: 0.5rem;
+.feuille .projets ul {
+    padding-left: 3rem;
+    margin: 0.5rem 0;
 }
 .projets p:last-child {
     margin-bottom: 0;
@@ -140,4 +140,96 @@
 .feuille a {
     font-size: 1rem;
     color: currentColor;
+}
+
+.pdfColor.feuille {
+    color: black;
+}
+
+.pdfButton, .pdfButtonMobile {
+    border-radius: 8px;
+    padding: 4px 8px;
+    color: var(--text-color);
+    background:  var(--background-color);
+    border: currentColor 1px solid;
+    box-shadow:  3px 3px 0px  var(--text-color);
+    transform: translate(-3px, -3px);
+    font-size: inherit;
+    font-family: inherit;
+    cursor: pointer;
+}
+.pdfButton.animated, .pdfButtonMobile.animated {
+    animation: 0.10s linear 0s colorButton;
+}
+
+@keyframes colorButton {
+    0% {
+      transform: translate(-3px, -3px);
+      box-shadow: 3px 3px 0 currentColor,
+                  2px 3px 0 currentColor;
+    }
+    50% {
+      box-shadow: 0 0 0 var(--text-color);
+      transform: translate(0, 0);
+    }
+    100% {
+      transform: translate(-3px, -3px);
+      box-shadow: 3px 3px 0 currentColor,
+                  2px 3px 0 currentColor;
+    }
+  }
+
+.pdfButtonMobile {
+    display: none;
+}
+.title {
+    text-align: center;
+    margin: 1rem auto 0;
+}
+.title h1 {
+    display: inline-block;
+    margin-right: 2rem;
+}
+
+@media (max-width: 21cm) {
+    .pdfButton {
+        display: none;
+    }
+    .pdfButtonMobile {
+        display: inline-block;
+    }
+
+    .feuille {
+        max-width: 100%;
+        width: unset;
+        height: unset;
+        border: unset
+    }
+    .header {
+        flex-direction: column;
+    }
+    .header div:last-child {
+        max-width: 100%;
+    }
+    .mainContainer {
+        flex-direction: column;
+    }
+    .leftContainer {
+        border-right: unset;
+        width: unset;
+        order: 2;
+    }
+    .rightContainer {
+        border: none;
+        width: unset;
+        max-width: 100%;
+    }
+
+    .feuille .projets, .feuille .parcours {
+        padding: 0.5rem;
+    }
+    .shadow {
+        border: unset;
+        border-top: currentColor 1px solid;
+    }
 }
