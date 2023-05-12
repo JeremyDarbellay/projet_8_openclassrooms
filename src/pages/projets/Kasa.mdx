@@ -1,27 +1,36 @@
 import styles from "@/styles/Mdx.module.css";
 import kasaImage from "@/assets/banner-kasa.png";
 import Image from "next/image";
+import Head from "next/head";
 
-import ProjectInfo from '@/components/ProjectInfo'
+import ProjectInfo from "@/components/ProjectInfo";
 
 export default function Layout({ children }) {
-  return <div className={styles.mdx}>{children}</div>;
+    return <div className={styles.mdx}>{children}</div>;
 }
 
 export const meta = {
-    name: 'Kasa',
+    name: "Kasa",
     description: `Construction d'une plateforme web de location d'appartements entre particuliers afin d'effectuer la migration de ASP.NET vers une stack javascript basée sur Node et React. Ce projet ne contiendra que la partie Front-End avec React et React-Router, sans autres dépendances.`,
     cover: kasaImage,
-    tags: 'React, ReactRouter, Tests',
-    sources: 'https://github.com/JeremyDarbellay/projet_6_openclassrooms',
-    demo: 'https://jeremydarbellay.github.io/projet_6_openclassrooms/'
-}
+    tags: "React, ReactRouter, Tests",
+    sources: "https://github.com/JeremyDarbellay/projet_6_openclassrooms",
+    demo: "https://jeremydarbellay.github.io/projet_6_openclassrooms/",
+};
+
+<Head>
+    <title>Projet Kasa (React) de Jérémy Darbellay </title>
+    <meta
+        name="description"
+        content={meta.description}
+    />
+</Head>
 
 # Kasa - Location d'appartements entre particuliers
 
 <div className={styles.projectHeader}>
-  <Image src={kasaImage} alt="bannière de Kasa" />
-  <ProjectInfo meta={meta} />
+    <Image src={kasaImage} alt="bannière de Kasa" />
+    <ProjectInfo meta={meta} />
 </div>
 
 ## Découverte de React, via le projet de Kasa
@@ -37,14 +46,14 @@ En plus de ces quelques pages, je devais également construire des composants sp
 
 Dans ce projet, Kasa imposait une série de pratiques à respecter (ce sont des bonnes pratiques, que j'aurais suivi de toute façon), ainsi que l'interdiction d'utiliser d'autres modules pour React, donc exit les composants pré-construits et c'est tant mieux, rien de tel pour apprendre que de construire soit même.
 
-En plus de ces contraintes, j'ai souhaité aller un peu plus loin, je me suis également ajouté la contrainte d'un contenu accessible et de la construction de tests afin de veiller au bon fonctionnement de mon application. 
+En plus de ces contraintes, j'ai souhaité aller un peu plus loin, je me suis également ajouté la contrainte d'un contenu accessible et de la construction de tests afin de veiller au bon fonctionnement de mon application.
 
 La plus grande complexité a été pour moi l'établissement du routing, utilisant ReactRouter v6.9, j'ai choisi d'utiliser les datas router et ainsi, mon router s'est trouvé être un "objet" plutôt qu'un composant. Ce qui a un peu compliqué le processus, étant donné qu'il ne correspondait plus au cours fournit avec le projet (utilisant le `<BrowserRouter>`).
 
 ## Bénéfices : changement de point de vue sur React
 
 Au départ, j'avais du mal de percevoir l'utilité d'une librairie comme React pour des petits projets, en soit c'est ajouté beaucoup de javascript pour des besoins très simples. Aujourd'hui, je saisis mieux l'intérêt des composants réutilisables et des librairies comme React, apportant beaucoup de valeur à un site.
-En revanche, pour les SEO, je reste sur ma faim, l'utilisation de frameworks tels que Next.js est de suite plus appropriée lorsque l'on se préoccupe un tant soit peu de l'optimisation. 
+En revanche, pour les SEO, je reste sur ma faim, l'utilisation de frameworks tels que Next.js est de suite plus appropriée lorsque l'on se préoccupe un tant soit peu de l'optimisation.
 
 Une meilleur compréhension des tests et de leur utilité. Il est infiniment agréable de mettre à jour son application et avoir l'assurance (ou presque) qu'il n'y aura pas d'erreurs. De plus, l'utilisation de ReactTestingLibrary, qui part du postulat que l'on doit tester les fonctionnalités que le visiteur de notre site utilise, m'a également permit d'éviter de tester des noms de fonctions plutôt que leur résultat.
 

@@ -2,6 +2,7 @@ import styles from "@/styles/Mdx.module.css";
 import ninaImage from "@/assets/banner-nina.jpg";
 import Image from "next/image";
 import ProjectInfo from '@/components/ProjectInfo'
+import Head from "next/head";
 
 export default function Layout({ children }) {
   return <div className={styles.mdx}>{children}</div>;
@@ -15,6 +16,13 @@ export const meta = {
     sources: 'https://github.com/JeremyDarbellay/projet_5_openclassrooms',
     demo: 'https://jeremydarbellay.github.io/projet_5_openclassrooms/'
 }
+<Head>
+    <title>Projet NinaCarducci de Jérémy Darbellay</title>
+    <meta
+        name="description"
+        content={meta.description}
+    />
+</Head>
 
 # Nina Carducci, photographe professionnelle à Bordeaux
 

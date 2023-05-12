@@ -1,8 +1,16 @@
 import styles from "@/styles/Mdx.module.css";
+import Head from "next/head";
 
 export default function Layout({children}) {
   return <div className={styles.mdx}>{children}</div>;
 }
+<Head>
+    <title>Remerciements de Jérémy Darbellay</title>
+    <meta
+        name="description"
+        content="Il était important pour moi de remercier celles et ceux qui m'ont aider, vous trouverez mes remerciements sur cette page."
+    />
+</Head>
 
 # Remerciements
 

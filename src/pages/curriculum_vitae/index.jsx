@@ -7,6 +7,7 @@ import { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faLinkedin, faGithub } from "@fortawesome/free-brands-svg-icons";
 import { faAt, faMobile } from "@fortawesome/free-solid-svg-icons";
+import Head from "next/head";
 
 export default function CurriculumVitae() {
     // to override color when using dark theme during pdf generation
@@ -35,6 +36,13 @@ export default function CurriculumVitae() {
 
     return (
         <>
+        <Head>
+            <title>CurriculumVitae de Jérémy Darbellay</title>
+            <meta
+                name="description"
+                content="Découvrez le C.V. de Jérémy Darbellay, développeur web à Nancy. Vous pourrez également le télécharger au format pdf pour le lire à la maison"
+            />
+        </Head>
             <div className={styles.title}>
                 <h1>Curriculum Vitae</h1>
                 <button

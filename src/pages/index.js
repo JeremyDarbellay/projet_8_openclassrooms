@@ -13,11 +13,6 @@ export default function Home() {
                     name="description"
                     content="Bienvenue sur mon Portoflio, je suis Jérémy Darbellay, développeur freelance à Nancy. Venez explorer mes projets et mon C.V. et me connaître un peu mieux"
                 />
-                <meta
-                    name="viewport"
-                    content="width=device-width, initial-scale=1"
-                />
-                <link rel="icon" href="/favicon.ico" />
             </Head>
 
             <div className={`${styles.accueil} full-width`}>

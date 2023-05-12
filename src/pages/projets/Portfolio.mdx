@@ -2,6 +2,7 @@ import styles from "@/styles/Mdx.module.css";
 import officeImage from "@/assets/portfolio-beta.png";
 import Image from "next/image";
 import ProjectInfo from '@/components/ProjectInfo'
+import Head from "next/head";
 
 export default function Layout({ children }) {
   return <div className={styles.mdx}>{children}</div>;
@@ -16,6 +17,14 @@ export const meta = {
   sources: "https://github.com/JeremyDarbellay/projet_8_openclassrooms",
   demo: '/'
 };
+
+<Head>
+    <title>Projet portfolio de Jérémy Darbellay</title>
+    <meta
+        name="description"
+        content={meta.description}
+    />
+</Head>
 
 # Mon Portfolio, mon projet
 

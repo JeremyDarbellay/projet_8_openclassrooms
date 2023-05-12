@@ -1,9 +1,17 @@
 import Tabs from "@/components/Tabs"
 import styles from "@/styles/competences.module.css"
+import Head from "next/head";
 
 export default function Competences() {
     return (
         <>
+        <Head>
+            <title>Compétences de Jérémy Darbellay</title>
+            <meta
+                name="description"
+                content="Vous retrouverez une vue d'ensemble de mes compétences sur cette page, ainsi que les différentes technologies que je maîtrise et mon parcours éducatif"
+            />
+        </Head>
             <h1 className={styles.heading}>Découvrez mon parcours et mes compétences</h1>
             <section>
                 <h2>Langages et Frameworks Front-End</h2>

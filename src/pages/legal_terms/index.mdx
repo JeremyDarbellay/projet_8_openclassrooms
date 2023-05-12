@@ -1,8 +1,17 @@
 import styles from "@/styles/Mdx.module.css";
+import Head from "next/head";
 
 export default function Layout({children}) {
   return <div className={styles.mdx}>{children}</div>;
 }
+
+<Head>
+    <title>Mentions légales du portfolio de Jérémy Darbellay</title>
+    <meta
+        name="description"
+        content="Consultez les mentions légales associées à mon site internet. Parce que oui, certaines informations sont nécessaires."
+    />
+</Head>
 
 # Mentions légales
 
