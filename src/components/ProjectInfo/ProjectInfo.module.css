@@ -16,28 +16,10 @@
     margin: 0;
     padding: 0;
 }
+.card > div:last-child {
+    padding: 1rem 0;
+}
 
-
-.button {
-    color: currentColor;
-    border: currentColor 1px solid;
-    background: var(--background-color);
-    padding: 0.5rem 1rem;
-    font-size: 1rem;
-    margin: 0.5rem 0;
-    box-shadow: currentColor 0.25em 0.25em;
-    cursor: pointer;
-    width: fit-content;
-    margin-right: 1.5rem;
-}
-  
-.button:hover {
-    box-shadow: currentColor 0.5em 0.35em;
-    animation: 0.2s linear 0s button;
-}
-.button a {
-    text-decoration: none;
-}
 @keyframes button {
     from {
       box-shadow: currentColor 0.25em 0.25em;

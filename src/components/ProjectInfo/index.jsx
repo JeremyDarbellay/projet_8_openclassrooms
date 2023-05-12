@@ -26,17 +26,12 @@ export default function ProjectInfo({ meta }) {
                     <strong>Tags : </strong>{ meta.tags }
                 </p>
                 <div>
-                    <button className={styles.button}>
-                        <Link href={`${meta.sources}`}  >
+                        <Link className="button" href={`${meta.sources}`}  >
                             sources du projet
                         </Link>
-                    </button>
-
-                    <button className={styles.button}>
-                        <Link href={`${meta.demo}`}  >
+                        <Link className="button" href={`${meta.demo}`}  >
                             démonstration
                         </Link>
-                    </button>
                 </div>
             </article>
         </>

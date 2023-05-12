@@ -12,21 +12,18 @@
   margin-left: 1em;
 }
 
-.mdx a {
+.mdx a:not([class="button"]) {
   text-decoration: dotted;
   text-decoration-line: underline;
   margin-left: 2px;
   margin-right: 1px;
-}
-
-.mdx :not(button) > a {
   border: 1px solid transparent;
   padding: 0 3px;
   box-shadow: 0 0 0 currentColor;
   display: inline-block;
 }
 
-.mdx :not(button) > a:hover {
+.mdx a:hover:not([class="button"]) {
   border: 1px solid currentColor;
   transform: translate(-4px, -2px);
   animation: 0.2s linear 0s linkShadow;

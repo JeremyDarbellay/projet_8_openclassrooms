@@ -48,21 +48,21 @@ export default function Projets({ projects }) {
                                     <Link
                                         key={index.toString()}
                                         href={`/projets/${projet.name}`}
-                                        className={styles.button}
+                                        className="button"
                                     >
                                         page du projet
                                     </Link>
                                     <Link
                                         key={index.toString()}
                                         href={`${projet.sources}`}
-                                        className={styles.button}
+                                        className="button"
                                     >
                                         sources du projet
                                     </Link>
                                     <Link
                                         key={index.toString()}
                                         href={`${projet.demo}`}
-                                        className={styles.button}
+                                        className="button"
                                     >
                                         démonstration
                                     </Link>

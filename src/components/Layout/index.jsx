@@ -43,9 +43,7 @@ export default function Layout({ children }) {
     return (
         <>
             <header className={styles.header}>
-                <button className={styles.logo}>
-                    <Link href="/">Jérémy Darbellay</Link>
-                </button>
+                <Link className={styles.logo} href="/">Jérémy Darbellay</Link>
                 <button
                     onClick={handleOpenNavClick}
                     className={

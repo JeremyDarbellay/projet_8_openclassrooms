@@ -20,6 +20,10 @@
     animation: 0.75s linear 0s pencher;
 }
 
+.mainSection a svg {
+    margin-right: 0.5rem;;
+}
+
 @keyframes pencher {
     0% {
         rotate: 0deg;
