@@ -37,7 +37,7 @@
 }
 
 .projectText > * {
-  flex-grow: 0 1 auto;
+  flex: 0 1 auto;
 }
 
 .projectText p {
@@ -78,7 +78,8 @@
 @media (max-width: 1020px) {
     .projectSection > article {
       flex-direction: column;
-      align-items: center;;
+      align-items: center;
+      gap: 1rem;
     }
     .projectSection > article > * {
       flex: unset;
@@ -86,23 +87,37 @@
     }
 }
 @media (max-width: 600px) {
+
+  .Container {
+    padding: 1rem
+  }
+  .Container h1 {
+    text-align: center;
+    font-size: 1.625rem;
+  }
+
+  .Container >p {
+    padding: 0 1rem;
+  }
+
   .projectSection > article {
     flex-direction: column;
   }
+
   .projectSection > article > * {
     flex: unset;
     max-width: 100%;
   }
-  .button {
-    margin: 0.5rem;
-    width: fit-content;
-  }
+
+
   .button:last-child {
     margin-bottom: 0;
   }
+
   .projectText {
-    padding: 0.5rem;
+    padding: 0.75rem 0;
   }
+  
   .projectText h2 {
     text-align: center;
   }

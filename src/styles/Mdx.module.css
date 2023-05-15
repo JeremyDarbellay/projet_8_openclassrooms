@@ -63,24 +63,46 @@
   border-top: currentColor 1px solid;
   border-bottom: currentColor 1px solid;
   gap: 2.5rem;
-  align-items: stretch;
+  align-items: flex-start;
 }
 
 .projectHeader img {
   border : none;
-  flex-grow: 1;
-  max-width: 66%;
+  max-width: unset;
+  height: unset;
+  object-fit: contain;
+  max-width: 100%;
+  width: 100%;
+  flex: 1.5 1 1px;
 }
 
 .projectHeader article {
-  max-width: 33%;
+  flex: 1 1 1px;
+  max-width: 100%;
+  width: 100%;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 1080px) {
   .projectHeader {
     flex-direction: column;
+    gap: 0;
+    align-items: center;
   }
+
   .projectHeader img, .projectHeader  article {
     max-width: 100%;
+  }
+}
+@media (max-width: 1080px) {
+  .mdx {
+    padding: 2em;
+  }
+}
+@media (max-width: 600px) {
+  .mdx {
+    padding: 1.25rem ;
+  }
+  .mdx h1 {
+    font-size: 1.825rem;
   }
 }

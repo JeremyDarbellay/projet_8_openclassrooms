@@ -16,7 +16,7 @@ export default function ProjectInfo({ meta }) {
         <>
             <article className={styles.card}>
 
-                <p className={styles.header}><strong>Nom du projet : </strong>{ meta.name }</p>
+                <h2 className={styles.header}>Projet : { meta.name }</h2>
 
                 <p className={styles.body}>
                     <strong>Description :</strong> <br />

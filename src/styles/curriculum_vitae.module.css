@@ -3,6 +3,7 @@
     width: fit-content;
     height: fit-content;
     margin: 2.5rem auto;
+    box-shadow: 8px 8px 0 0 currentColor;
 }
 .feuille {
     width: 21cm;
@@ -24,8 +25,13 @@
 .feuille h2, .feuille h3 {
     margin-bottom: 0.75rem;
 }
-.feuille h2 {
-    text-decoration: underline;
+.feuille h2, .header h3  {
+    width: fit-content;
+    border-bottom: 1px solid currentColor;
+}
+.header h2, .header h2+h3 {
+    width: unset;
+    border-bottom: unset;
 }
 
 .feuille p,
@@ -59,7 +65,7 @@
 .feuille .header {
     display: flex;
     justify-content: space-between;
-    align-items: stretch;;
+    align-items: stretch;
     padding: 0;
     border-bottom: 1px solid currentColor;
 }
@@ -88,20 +94,28 @@
     margin-bottom: 1.5rem;
     text-decoration: none;
 }
-.header h3 {
-    text-decoration: underline;
-}
 .feuille section.projets {
     border-bottom: none;
 }
 
-.contact p {
-    display: flex;
-    word-break: break-all;
+.feuille footer.info {
+    padding: 0.75rem;
+}
+
+.info p, .contact p {
+    word-break: break-word;
     color: currentColor;
+}
+.info p:not(:last-child) {
+    margin-bottom: 0.5rem;
 }
 .contact p svg {
     margin-right: 4px;
+}
+
+.contact p {
+    margin-bottom: 0.33rem;
+    display: flex;
 }
 
 .projets h3:not(:first-of-type) , .parcours h3:not(:first-of-type) {
@@ -114,8 +128,10 @@
 .projets h3, .projets h2, .parcours h3, .parcours h2 {
     padding-top: 0.75rem;
 }
-.projets h2, .parcours h2 {
+.feuille .projets h2, .feuille .parcours h2 {
     margin-bottom: 0rem;
+    padding-left: 0;
+    margin-left: 1rem;
 }
 
 .feuille .projets, .feuille .parcours {
@@ -130,19 +146,15 @@
     padding-bottom: 0.5rem;
 }
 
-/** overrides */
 .feuille > .objectifs > p {
     margin: 0;
-}
-.feuille footer.contact {
-    padding: 0.75rem;
 }
 .feuille a {
     font-size: 1rem;
     color: currentColor;
 }
 
-.pdfColor.feuille {
+.pdfColor {
     color: black;
 }
 
@@ -231,5 +243,26 @@
     .shadow {
         border: unset;
         border-top: currentColor 1px solid;
+        border-bottom: currentColor 1px solid;
+        box-shadow: unset;
+    }
+}
+
+@media (max-width: 900px) {
+    .shadow {
+      box-shadow: unset;
+    }
+  }
+
+@media (max-width: 600px) {
+    .title > h1, .title a {
+        display: block;
+    }
+    .title a {
+        width: fit-content;
+        margin: auto;
+    }
+    .title h1 {
+        margin: 1rem auto;
     }
 }

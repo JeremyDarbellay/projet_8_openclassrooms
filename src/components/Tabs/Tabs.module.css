@@ -8,26 +8,29 @@
     flex-direction: column;
     align-items: stretch;
     border-right: currentColor 1px solid;
-    min-width: 25%;
+    flex: 1 0 1px;
 }
 
 .titles button {
+    font-family: unset;
+    font-weight: unset;
+    line-height: unset;
     color: currentColor;
     padding: 1rem;
-    flex: 1 1 0px;
     margin: 0;
     background-color: unset;
     border: unset;
     cursor: pointer;
     font-size: unset;
+    width: 100%;
 }
 
-.titles button:hover, .titles button.active {
+.titles h3:hover, .titles h3.active {
     background-color: var(--text-color);
     color: var(--background-color);
 }
 
-.titles > button:not(:last-child) {
+.titles > h3:not(:last-child) {
     border-bottom: currentColor 1px solid;
 }
 
@@ -35,10 +38,12 @@
     display:flex;
     align-items: center;
     margin: 0;
+    flex: 1 1 0px;
 }
 
 .contents {
     padding: 0.5rem;
+    flex: 3 0 1px;
 }
 
 .content.disabled {
@@ -49,12 +54,14 @@
 .content {
     padding: 1rem;
 }
+@media (max-width:1080px) {
 
+}
 @media (max-width: 600px) {
     .titles {
-        
         border-right: unset;
         border-bottom: currentColor 1px solid;
+        flex: 1 0 auto;
     }
 
     .titles h3 {
@@ -64,5 +71,8 @@
 
     .container {
         flex-direction: column;
+    }
+    .container > * {
+        flex: 1 0 auto;
     }
 }

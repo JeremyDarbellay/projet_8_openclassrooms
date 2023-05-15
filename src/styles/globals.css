@@ -137,7 +137,15 @@ img {
     box-shadow: 4px 2px 0 currentColor;
   }
 }
-
+@media (max-width: 1080px) {
+  section {
+    padding: 1.5rem;
+    border-top: currentColor 1px solid;
+  }
+  section > p {
+    padding: 0.25rem 0.25rem 0.25rem 0.75rem;
+  }
+}
 @media (max-width: 600px) {
 
   a.link {
@@ -147,20 +155,31 @@ img {
     margin-right: 4px;
   }
 
-  :not(button) > a.link {
+  a.link {
     border: 1px solid transparent;
     padding: 0.125rem 0.25rem;
     box-shadow: 0 0 0 currentColor;
     display: inline-block;
   }
 
-  :not(button) > a.link:hover {
+  a.link:hover {
     border: 1px solid currentColor;
     transform: unset;
     animation: unset;
     box-shadow: unset;
     color: var(--background-color);
     background-color: var(--text-color);
+  }
+
+  section {
+    padding: 1rem;
+    border-top: currentColor 1px solid;
+  }
+  section > p {
+    padding: 0.25rem 0.25rem 0.25rem 0.75rem;
+  }
+  .button {
+    font-size: 1.125rem;
   }
 
 }

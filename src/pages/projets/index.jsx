@@ -33,7 +33,7 @@ export default function Projets({ projects }) {
 
                 <section className={styles.projectSection}>
                     {projects.map((projet, index) => (
-                        <article>
+                        <article key={`projet-${index.toString()}`}>
                             <Image
                                 src={projet.cover}
                                 alt={`projet de ${projet.name}`}
@@ -46,21 +46,18 @@ export default function Projets({ projects }) {
                                 </p>
                                 <div>
                                     <Link
-                                        key={index.toString()}
                                         href={`/projets/${projet.name}`}
                                         className="button"
                                     >
                                         page du projet
                                     </Link>
                                     <Link
-                                        key={index.toString()}
                                         href={`${projet.sources}`}
                                         className="button"
                                     >
                                         sources du projet
                                     </Link>
                                     <Link
-                                        key={index.toString()}
                                         href={`${projet.demo}`}
                                         className="button"
                                     >

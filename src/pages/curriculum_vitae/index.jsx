@@ -19,30 +19,29 @@ export default function CurriculumVitae() {
         setTimeout(() => setAnimated(false), 100);
     }
 
-    function printDocument() {
+    async function printDocument() {
         playAnimation();
 
-        setPdfColor(true);
+        await setPdfColor(true);
         const input = document.getElementById("pdf");
-        html2canvas(input).then((canvas) => {
+        await html2canvas(input).then((canvas) => {
             const imgData = canvas.toDataURL("image/png", 1);
             const pdf = new jsPDF("portrait", "pt", "a4");
             pdf.addImage(imgData, "JPEG", 0, 0);
-            // pdf.output("dataurlnewwindow", "cv_darbellay_jeremy.pdf");
-            pdf.save("download.pdf");
-            setPdfColor(false);
-        });
+            pdf.save("cv_darbellay_jeremy.pdf");
+        })
+        setPdfColor(false);
     }
 
     return (
         <>
-        <Head>
-            <title>CurriculumVitae de Jérémy Darbellay</title>
-            <meta
-                name="description"
-                content="Découvrez le C.V. de Jérémy Darbellay, développeur web à Nancy. Vous pourrez également le télécharger au format pdf pour le lire à la maison"
-            />
-        </Head>
+            <Head>
+                <title>CurriculumVitae de Jérémy Darbellay</title>
+                <meta
+                    name="description"
+                    content="Découvrez le C.V. de Jérémy Darbellay, développeur web à Nancy. Vous pourrez également le télécharger au format pdf pour le lire à la maison"
+                />
+            </Head>
             <div className={styles.title}>
                 <h1>Curriculum Vitae</h1>
                 <button
@@ -55,16 +54,18 @@ export default function CurriculumVitae() {
                 >
                     Télécharger le PDF
                 </button>
-                <button
+                <a
                     className={
                         animated
                             ? `${styles.pdfButtonMobile} ${styles.colorButton} ${styles.animated}`
                             : `${styles.pdfButtonMobile} ${styles.colorButton}`
                     }
                     onClick={playAnimation}
+                    href="/cvmobile.pdf"
+                    target="_blank"
                 >
-                    <a href="/cvmobile.pdf">Télécharger le PDF</a>
-                </button>
+                    Télécharger le PDF
+                </a>
             </div>
             <div className={styles.shadow}>
                 <article
@@ -84,19 +85,29 @@ export default function CurriculumVitae() {
                                 Optimisation et SEO
                             </p>
                         </div>
-                        <div>
-                            <h3>Informations</h3>
+                        <div className={styles.contact}>
+                            <h3>Contact</h3>
                             <p>
-                                <strong>Localisation</strong> : Nancy, Lorraine
-                                <br />
-                                <strong>Mobilité</strong> : 30 minutes (Permis B
-                                + voiture)
-                                <br />
-                                <strong>Portfolio : </strong>
-                                <Link href="https://jeremydarbellay.github.io/projet_8_openclassrooms">
-                                    https://jeremydarbellay.github.io/projet_8_openclassrooms
+                                <FontAwesomeIcon icon={faAt} />{" "}
+                                <a href="mailto:jeremy.darbellay@gmail.com">
+                                    jeremy.darbellay@gmail.com
+                                </a>
+                            </p>
+                            <p>
+                                <FontAwesomeIcon icon={faMobile} />{" "}
+                                06.14.76.35.12
+                            </p>
+                            <p>
+                                <FontAwesomeIcon icon={faLinkedin} />{" "}
+                                <Link href="https://www.linkedin.com/in/jeremydarbellay">
+                                    https://www.linkedin.com/in/jeremydarbellay
                                 </Link>
-                                <br />
+                            </p>
+                            <p>
+                                <FontAwesomeIcon icon={faGithub} />{" "}
+                                <Link href="https://github.com/JeremyDarbellay">
+                                    https://github.com/JeremyDarbellay
+                                </Link>
                             </p>
                         </div>
                     </header>
@@ -245,28 +256,20 @@ export default function CurriculumVitae() {
                                 <div>Git </div>
                                 <div>RestFull API</div>
                             </section>
-                            <footer className={styles.contact}>
-                                <h2>Contact</h2>
+                            <footer className={styles.info}>
+                                <h2>Informations</h2>
                                 <p>
-                                    <FontAwesomeIcon icon={faAt} />{" "}
-                                    <a href="mailto:jeremy.darbellay@gmail.com">
-                                        jeremy.darbellay@gmail.com
-                                    </a>
+                                    <strong>Localisation</strong> : Nancy,
+                                    Lorraine
                                 </p>
                                 <p>
-                                    <FontAwesomeIcon icon={faMobile} />{" "}
-                                    06.14.76.35.12
+                                    <strong>Mobilité</strong> : 30 minutes
+                                    (Permis B + voiture)
                                 </p>
                                 <p>
-                                    <FontAwesomeIcon icon={faLinkedin} />{" "}
-                                    <Link href="https://www.linkedin.com/in/jeremydarbellay">
-                                        https://www.linkedin.com/in/jeremydarbellay
-                                    </Link>
-                                </p>
-                                <p>
-                                    <FontAwesomeIcon icon={faGithub} />{" "}
-                                    <Link href="https://github.com/JeremyDarbellay">
-                                        https://github.com/JeremyDarbellay
+                                    <strong>Portfolio</strong>{" : "}
+                                    <Link href="https://jeremydarbellay.github.io/projet_8_openclassrooms">
+                                        https://jeremydarbellay.github.io/projet_8_openclassrooms
                                     </Link>
                                 </p>
                             </footer>
