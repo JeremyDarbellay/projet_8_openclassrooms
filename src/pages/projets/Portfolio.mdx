@@ -1,39 +1,33 @@
 import styles from "@/styles/Mdx.module.css";
 import officeImage from "@/assets/portfolio-beta.png";
 import Image from "next/image";
-import ProjectInfo from '@/components/ProjectInfo'
+import ProjectInfo from "@/components/ProjectInfo";
 import Head from "next/head";
 
 export default function Layout({ children }) {
-  return <div className={styles.mdx}>{children}</div>;
+    return <div className={styles.mdx}>{children}</div>;
 }
 
 export const meta = {
-  name: "Portfolio",
-  description:
-    "Ce projet, n'est ni plus, ni moins que ce site, sur lequel vous vous trouvez. Vous découvrirez comment et pourquoi il a été fait ainsi",
-  cover: officeImage,
-  tags: "Next, MDX",
-  sources: "https://github.com/JeremyDarbellay/projet_8_openclassrooms",
-  demo: '/'
+    name: "Portfolio",
+    description:
+        "Ce projet, n'est ni plus, ni moins que ce site, sur lequel vous vous trouvez. Vous découvrirez les différentes technologies que j'ai pu utiliser pour le concevoir et les quelques fantaisies présentes sur ce site.",
+    cover: officeImage,
+    tags: "Next, MDX, SEO",
+    sources: "https://github.com/JeremyDarbellay/projet_8_openclassrooms",
+    demo: "/",
 };
 
 <Head>
     <title>Projet portfolio de Jérémy Darbellay</title>
-    <meta
-        name="description"
-        content={meta.description}
-    />
+    <meta name="description" content={meta.description} />
 </Head>
 
 # Mon Portfolio, mon projet
 
 <div className={styles.projectHeader}>
-  <Image
-    src={officeImage}
-    alt="image de la page d'accueil du site"
-  />
-  <ProjectInfo meta={meta} />
+    <Image src={officeImage} alt="image de la page d'accueil du site" />
+    <ProjectInfo meta={meta} />
 </div>
 
 ## Présentation de mon Portfolio
@@ -53,12 +47,14 @@ Ensuite, le design a été également un point difficile, je ne suis pas designe
 
 Pour finir, une fois le style et les choix construits, il ne restait plus qu'à mettre en place, l'utilisation de mdx, le routage et l'adaptation à GH pages est toujours un petit défi en soit. Nous ne maîtrisons pas l'hébergement, ainsi, il a fallu ruser pour certaines routes et pour la mise en production. Fort heureusement, Next.js permet d'assez facilement s'adapter à ces contraintes.
 
+Une attention particulière à également été apportée aux optimisations pour moteur de recherche du site, ainsi vous retrouverez un score allant de 90 à 100 en analysant chaque page via LightHouse. De plus, nous avons placé un point d'honneur à fournir un site accessible et structuré, nous avons vérifié chaque page via Axe et Wave, afin d'éliminer les problèmes d'accessibilités.
+
 ## Ce que j'ai tiré de ce projet
 
 Pour commencer, ce projet, m'a apporté une vue plus globale d'une mise en production d'un site vitrine, jusqu'à présent, au cours des projets de ma formation OpenClassrooms, de nombreux détails étaient pris en charge par le projet en lui-même, la charte graphique, l'absence d'hébergement, le processus à adopter. Ici, je suis seul maître à bords, je choisis la stack, la charte et les pratiques à adopter.<br />
 Donc il est ainsi bien plus gratifiant de finaliser ce projet en sachant qu'il provient entièrement de nous-même.
 
-Ensuite, j'ai également pu expérimenter avec Next.js et commencer à l'utiliser, de mon point dde vue, ce framework est une bénédiction et épargne de nombreux maux de têtes, le routing est facilité, la génération de site statique également, etc... J'ai choisi de ne pas trop m'éloigner de ma zone de confort afin de développer sans accrocs, l'avenir me permettra de développer d'autres compétences et d'autres technologies.
+Ensuite, j'ai également pu expérimenter avec Next.js et commencer à l'utiliser, de mon point de vue, ce framework est une bénédiction et épargne de nombreux maux de têtes, le routing est facilité, la génération de site statique également, etc... J'ai choisi de ne pas trop m'éloigner de ma zone de confort, en restant dans l'environnement de React, afin de développer sans accrocs, l'avenir me permettra de développer d'autres compétences et d'autres technologies.
 
 Enfin, depuis longtemps je souhaitais pouvoir publier via le langage markdown que je trouve particulièrement agréable d'utilisation, ce projet, m'a permit de concrétiser cette envie.
 

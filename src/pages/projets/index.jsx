@@ -18,10 +18,16 @@ export default function Projets({ projects }) {
             <div className={styles.Container}>
                 <h1> Mes projets finalisés </h1>
                 <p>
-                    Vous retrouverez mes différents projets sur cette page,
-                    plutôt que de vous innonder de différents projets, je vous
-                    en ai sélectionné trois. Vous pourrez retrouver les autres
-                    sur mon profil github{" "}
+                    Mon portfolio présente les projets que j'ai réalisés jusqu'à
+                    présent au cours de ma formation et de mes expériences
+                    pratiques. Chaque projet représente une étape de ma
+                    progression en tant que développeur web. J'ai mis en
+                    pratique mes connaissances pour créer des sites web
+                    fonctionnels et esthétiques, en m'efforçant toujours
+                    d'améliorer l'expérience utilisateur. J'aborde chaque projet
+                    avec enthousiasme et détermination, en m'adaptant aux
+                    besoins spécifiques de mes clients. Vous pourrez retrouver
+                    les autres sur mon profil github{" "}
                     <a
                         className="link"
                         href="https://github.com/JeremyDarbellay"
@@ -83,10 +89,10 @@ export async function getStaticProps() {
 
     let projects = [];
 
-    items.forEach(async (file) => {
+    await items.forEach(async (file) => {
         let projet = await require(`./${file}`);
         projects.push(projet.meta);
     });
-    console.log(projects);
+    
     return { props: { projects } };
 }

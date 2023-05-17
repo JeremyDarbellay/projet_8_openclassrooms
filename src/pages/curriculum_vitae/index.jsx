@@ -29,7 +29,7 @@ export default function CurriculumVitae() {
             const pdf = new jsPDF("portrait", "pt", "a4");
             pdf.addImage(imgData, "JPEG", 0, 0);
             pdf.save("cv_darbellay_jeremy.pdf");
-        })
+        });
         setPdfColor(false);
     }
 
@@ -67,6 +67,13 @@ export default function CurriculumVitae() {
                     Télécharger le PDF
                 </a>
             </div>
+            <p>
+                Bienvenue sur la page de mon C.V., vous pourrez le télécharger
+                via le bouton au dessus, celui-ci va transformer le C.V. que
+                vous voyez à l'écran en un document pdf, si vous êtes sur
+                mobile, vous pourrez télécharger une version préconçue de
+                celui-ci.
+            </p>
             <div className={styles.shadow}>
                 <article
                     className={
@@ -267,7 +274,8 @@ export default function CurriculumVitae() {
                                     (Permis B + voiture)
                                 </p>
                                 <p>
-                                    <strong>Portfolio</strong>{" : "}
+                                    <strong>Portfolio</strong>
+                                    {" : "}
                                     <Link href="https://jeremydarbellay.github.io/projet_8_openclassrooms">
                                         https://jeremydarbellay.github.io/projet_8_openclassrooms
                                     </Link>

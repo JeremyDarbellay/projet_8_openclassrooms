@@ -69,17 +69,19 @@
 .projectHeader img {
   border : none;
   max-width: unset;
-  height: unset;
   object-fit: contain;
-  max-width: 100%;
-  width: 100%;
+  display: block;
   flex: 1.5 1 1px;
+  flex-shrink: 1;
+  flex-basis: 1px;
+  width: 0px;
+  max-width: 60%;
 }
 
 .projectHeader article {
-  flex: 1 1 1px;
-  max-width: 100%;
-  width: 100%;
+  flex-grow: 1;
+  flex-shrink: 0;
+  flex-basis: 1px;
 }
 
 @media (max-width: 1080px) {
@@ -91,6 +93,7 @@
 
   .projectHeader img, .projectHeader  article {
     max-width: 100%;
+    width: 100%;
   }
 }
 @media (max-width: 1080px) {
