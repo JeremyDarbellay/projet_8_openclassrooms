@@ -20,6 +20,9 @@ const components = {
 };
 
 export default function App({ Component, pageProps }) {
+    /** we need this to ensure correct url for favicon */
+    const isProd = process.env.NODE_ENV === 'production'
+
     return (
         <>
             <Script strategy="beforeInteractive">
@@ -31,14 +34,14 @@ export default function App({ Component, pageProps }) {
                     name="viewport"
                     content="width=device-width, initial-scale=1"
                 />
-                <link rel="shortcut icon" href="/images/favicon.ico" />
-                <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png" />
-                <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png" />
-                <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png" />
+                <link rel="shortcut icon" href={isProd ? "projet_8_openclassrooms/images/favicon.ico" : "/images/favicon.ico"} />
+                <link rel="apple-touch-icon" sizes="180x180" href={isProd ? "projet_8_openclassrooms/images/apple-touch-icon.png " : "/images/apple-touch-icon.png"} />
+                <link rel="icon" type="image/png" sizes="32x32" href={isProd ? "projet_8_openclassrooms/images/favicon-32x32.png " : "/images/favicon-32x32.png"} />
+                <link rel="icon" type="image/png" sizes="16x16" href={isProd ? "projet_8_openclassrooms/images/favicon-16x16.png " : "/images/favicon-16x16.png"} />
                 <script
                     type="application/ld+json"
                     dangerouslySetInnerHTML={returnDefaultJsonLd()}
-                    key="product-jsonld"
+                    key="default-jsonld"
                 />
             </Head>
             <DefaultSeo {...SEO} />

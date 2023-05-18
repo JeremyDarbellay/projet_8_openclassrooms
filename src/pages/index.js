@@ -1,7 +1,7 @@
 import Head from "next/head";
 import Image from "next/image";
 
-import OfficeImage from "@/assets/office.jpg";
+import OfficeImage from "public/images/office.jpg";
 import styles from "@/styles/Home.module.css";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -33,7 +33,7 @@ export default function Home() {
                     <Image
                         className={styles.officeImage}
                         src={OfficeImage}
-                        alt="Un humain dessiné en fils"
+                        alt="Un homme travaillant sur un ordinateur dans son bureau"
                         width="600"
                     />
                     <div>
