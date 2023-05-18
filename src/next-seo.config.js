@@ -8,7 +8,7 @@ export default {
       siteName: 'Portfolio de JérémyDarbellay',
       images: [
         {
-          url: 'https:/jeremydarbellay.github.io/projet_8_openclassrooms/images/office_social.jpg',
+          url: 'https://jeremydarbellay.github.io/projet_8_openclassrooms/images/office_social.jpg',
           width: 1200,
           height: 630,
           alt: 'Un homme travaillant sur un ordinateur dans son bureau',
