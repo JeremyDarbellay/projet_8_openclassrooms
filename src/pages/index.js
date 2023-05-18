@@ -6,6 +6,7 @@ import styles from "@/styles/Home.module.css";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faLinkedin, faGithub } from "@fortawesome/free-brands-svg-icons";
+import { NextSeo } from "next-seo"
 
 export default function Home() {
     return (
@@ -17,6 +18,15 @@ export default function Home() {
                     content="Bienvenue sur mon Portoflio, je suis Jérémy Darbellay, développeur freelance à Nancy. Venez explorer mes projets et mon C.V. et me connaître un peu mieux"
                 />
             </Head>
+            <NextSeo 
+                title="Portfolio de Jérémy Darbellay"
+                description="Bienvenue sur mon Portoflio, je suis Jérémy Darbellay, développeur freelance à Nancy. Venez explorer mes projets et mon C.V. et me connaître un peu mieux"
+                openGraph={{
+                  url: 'https:/jeremydarbellay.github.io/projet_8_openclassrooms',
+                  title: 'Portfolio de Jérémy Darbellay',
+                  description: 'Bienvenue sur mon Portoflio, je suis Jérémy Darbellay, développeur freelance à Nancy. Venez explorer mes projets et mon C.V. et me connaître un peu mieux',
+                }}
+            />
 
             <div className={`${styles.accueil} full-width`}>
                 <section className={styles.mainSection}>

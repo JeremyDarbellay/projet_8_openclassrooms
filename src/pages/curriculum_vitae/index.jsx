@@ -8,6 +8,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faLinkedin, faGithub } from "@fortawesome/free-brands-svg-icons";
 import { faAt, faMobile } from "@fortawesome/free-solid-svg-icons";
 import Head from "next/head";
+import { NextSeo } from "next-seo";
 
 export default function CurriculumVitae() {
     // to override color when using dark theme during pdf generation
@@ -36,12 +37,22 @@ export default function CurriculumVitae() {
     return (
         <>
             <Head>
-                <title>CurriculumVitae de Jérémy Darbellay</title>
+                <title>Curriculum Vitae de Jérémy Darbellay</title>
                 <meta
                     name="description"
                     content="Découvrez le C.V. de Jérémy Darbellay, développeur web à Nancy. Vous pourrez également le télécharger au format pdf pour le lire à la maison"
                 />
             </Head>
+            <NextSeo
+                title="Curriculum Vitae de Jérémy Darbellay"
+                description="Découvrez le C.V. de Jérémy Darbellay, développeur web à Nancy. Vous pourrez également le télécharger au format pdf pour le lire à la maison"
+                openGraph={{
+                    url: "https:/jeremydarbellay.github.io/projet_8_openclassrooms/remerciements",
+                    title: "Curriculum Vitae de Jérémy Darbellay",
+                    description:
+                        "Découvrez le C.V. de Jérémy Darbellay, développeur web à Nancy. Vous pourrez également le télécharger au format pdf pour le lire à la maison",
+                }}
+            />
             <div className={styles.title}>
                 <h1>Curriculum Vitae</h1>
                 <button

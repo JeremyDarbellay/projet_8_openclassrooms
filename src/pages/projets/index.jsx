@@ -4,6 +4,7 @@ import Link from "next/link";
 import styles from "@/styles/projets.module.css";
 import Image from "next/image";
 import Head from "next/head";
+import { NextSeo } from "next-seo";
 
 export default function Projets({ projects }) {
     return (
@@ -15,6 +16,16 @@ export default function Projets({ projects }) {
                     content="Explorez mes les pages de mes principaux projets finalisés. En outre, vous trouverez un lien direct vers le répertoire, la démonstration et la page de chacun de ces projets."
                 />
             </Head>
+            <NextSeo
+                title="Projets finalisés de Jérémy Darbellay"
+                description="Explorez mes les pages de mes principaux projets finalisés. En outre, vous trouverez un lien direct vers le répertoire, la démonstration et la page de chacun de ces projets."
+                openGraph={{
+                    url: "https:/jeremydarbellay.github.io/projet_8_openclassrooms/remerciements",
+                    title: "Projets finalisés de Jérémy Darbellay",
+                    description:
+                        "Explorez mes les pages de mes principaux projets finalisés. En outre, vous trouverez un lien direct vers le répertoire, la démonstration et la page de chacun de ces projets.",
+                }}
+            />
             <div className={styles.Container}>
                 <h1> Mes projets finalisés </h1>
                 <p>
@@ -93,6 +104,6 @@ export async function getStaticProps() {
         let projet = await require(`./${file}`);
         projects.push(projet.meta);
     });
-    
+
     return { props: { projects } };
 }

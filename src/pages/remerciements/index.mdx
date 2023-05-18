@@ -1,5 +1,6 @@
 import styles from "@/styles/Mdx.module.css";
 import Head from "next/head";
+import { NextSeo } from "next-seo"
 
 export default function Layout({children}) {
   return <div className={styles.mdx}>{children}</div>;
@@ -12,6 +13,16 @@ export default function Layout({children}) {
         content="Il était important pour moi de remercier celles et ceux qui m'ont aider, vous trouverez mes remerciements sur cette page."
     />
 </Head>
+
+<NextSeo 
+    title="Remerciements de Jérémy Darbellay"
+    description="Il était important pour moi de remercier celles et ceux qui m'ont aider, vous trouverez mes remerciements sur cette page."
+    openGraph={{
+      url: 'https:/jeremydarbellay.github.io/projet_8_openclassrooms/remerciements',
+      title: 'Remerciements de Jérémy Darbellay',
+      description: "Il était important pour moi de remercier celles et ceux qui m'ont aider, vous trouverez mes remerciements sur cette page.",
+    }}
+/>
 
 # Remerciements
 

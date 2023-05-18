@@ -3,6 +3,7 @@ import ninaImage from "@/assets/banner-nina.jpg";
 import Image from "next/image";
 import ProjectInfo from '@/components/ProjectInfo'
 import Head from "next/head";
+import { NextSeo } from "next-seo"
 
 export default function Layout({ children }) {
   return <div className={styles.mdx}>{children}</div>;
@@ -10,20 +11,32 @@ export default function Layout({ children }) {
 
 export const meta = {
     name: 'NinaCarducci',
-    description: "amélioration de l'optimisation du référencement sur les moteurs de recherches. ",
     cover: ninaImage,
     tags: 'SEO, Accessibilité, Débogage',
     sources: 'https://github.com/JeremyDarbellay/projet_5_openclassrooms',
-    demo: 'https://jeremydarbellay.github.io/projet_5_openclassrooms/'
+    demo: 'https://jeremydarbellay.github.io/projet_5_openclassrooms/',
+    description: `Dans ce projet d'optimisation, j'ai travaillé sur le site d'une photographe professionnelle, Nina Carducci, en améliorant la vitesse de chargement, la conformité aux normes d'accessibilité et la correction de bugs mineurs. L'accent a été mis sur l'optimisation du chargement des images et scripts, ainsi que sur l'accessibilité du site. En suivant les recommandations de Google, j'ai utilisé le format webp, redimensionné et compressé les images. L'accessibilité a été améliorée grâce à l'ajout de balises sémantiques, de rôles aria et de descriptions. Ce projet a également sensibilisé à l'importance des utilisateurs de technologies d'assistance.`,
+    shortDescription: "Dans ce projet d'optimisation, j'ai travaillé sur le site d'une photographe professionnelle, Nina Carducci, en améliorant la vitesse de chargement, la conformité aux normes d'accessibilité et la correction de bugs mineurs.",
+    title: `Projet ${meta.name} de Jérémy Darbellay`,
+    url: `https:/jeremydarbellay.github.io/projet_8_openclassrooms/projets/${meta.name}`
 }
 
 <Head>
     <title>Projet NinaCarducci de Jérémy Darbellay</title>
     <meta
         name="description"
-        content={meta.description}
+        content="Dans ce projet d'optimisation, j'ai travaillé sur le site d'une photographe professionnelle, Nina Carducci, en améliorant la vitesse de chargement, la conformité aux normes d'accessibilité et la correction de bugs mineurs."
     />
 </Head>
+<NextSeo
+    title={meta.title}
+    description={meta.shortDescription}
+    openGraph={{
+        url: {meta.url},
+        title: {meta.title},
+        description: {meta.shortDescription},
+    }}
+/>
 
 # Nina Carducci, photographe professionnelle à Bordeaux
 

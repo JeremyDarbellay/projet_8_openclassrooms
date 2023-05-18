@@ -5,6 +5,10 @@ import Script from "next/script";
 import { MDXProvider } from "@mdx-js/react";
 import Link from "next/link";
 
+/* seo */
+import SEO from '../next-seo.config';
+import { DefaultSeo } from 'next-seo';
+
 /* fontawesome */
 import { config } from "@fortawesome/fontawesome-svg-core";
 import "@fortawesome/fontawesome-svg-core/styles.css";
@@ -31,7 +35,13 @@ export default function App({ Component, pageProps }) {
                 <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png" />
                 <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png" />
                 <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png" />
+                <script
+                    type="application/ld+json"
+                    dangerouslySetInnerHTML={returnDefaultJsonLd()}
+                    key="product-jsonld"
+                />
             </Head>
+            <DefaultSeo {...SEO} />
             <Layout>
                 <MDXProvider components={components}>
                     <Component {...pageProps} />
@@ -39,4 +49,30 @@ export default function App({ Component, pageProps }) {
             </Layout>
         </>
     );
+}
+
+function returnDefaultJsonLd() {
+    return {
+        __html: `{
+            "@context": "https://schema.org",
+            "@type": "Person",
+            "name": "Jérémy Darbellay",
+            "jobTitle": "Développeur Web Freelance",
+            "description": "Je crée des sites sur mesure et apporte des solutions personnalisées à mes clients.",
+            "url": "https://jeremydarbellay.github.io/projet_8_openclassrooms",
+            "telephone": "+33614763512",
+            "address": {
+              "@type": "PostalAddress",
+              "addressLocality": "Saint-Max",
+              "postalCode": "54130",
+              "addressCountry": "France"
+            },
+            "email": "jeremy.darbellay@gmail.com",
+            "sameAs": [
+              "https://www.linkedin.com/in/jeremydarbellay",
+              "https://github.com/JeremyDarbellay",
+              "https://www.malt.fr/profile/jeremydarbellay"
+            ]
+        }`
+    }
 }

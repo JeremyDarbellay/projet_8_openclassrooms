@@ -1,5 +1,6 @@
 import styles from "@/styles/Mdx.module.css";
 import Head from "next/head";
+import { NextSeo } from "next-seo"
 
 export default function Layout({children}) {
   return <div className={styles.mdx}>{children}</div>;
@@ -12,6 +13,16 @@ export default function Layout({children}) {
         content="Consultez les mentions légales associées à mon site internet. Parce que oui, certaines informations sont nécessaires."
     />
 </Head>
+
+<NextSeo 
+    title="Mentions légales du portfolio de Jérémy Darbellay"
+    description="Consultez les mentions légales associées à mon site internet. Parce que oui, certaines informations sont nécessaires."
+    openGraph={{
+      url: 'https:/jeremydarbellay.github.io/projet_8_openclassrooms/remerciements',
+      title: 'Mentions légales du portfolio de Jérémy Darbellay',
+      description: "Consultez les mentions légales associées à mon site internet. Parce que oui, certaines informations sont nécessaires."
+    }}
+/>
 
 # Mentions légales
 

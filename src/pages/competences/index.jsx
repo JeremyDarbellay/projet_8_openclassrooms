@@ -1,5 +1,6 @@
 import Tabs from "@/components/Tabs";
 import styles from "@/styles/competences.module.css";
+import { NextSeo } from "next-seo";
 import Head from "next/head";
 
 export default function Competences() {
@@ -12,6 +13,16 @@ export default function Competences() {
                     content="Vous retrouverez une vue d'ensemble de mes compétences sur cette page, ainsi que les différentes technologies que je maîtrise et mon parcours éducatif"
                 />
             </Head>
+            <NextSeo
+                title="Compétences de Jérémy Darbellay"
+                description="Vous retrouverez une vue d'ensemble de mes compétences sur cette page, ainsi que les différentes technologies que je maîtrise et mon parcours éducatif"
+                openGraph={{
+                    url: "https:/jeremydarbellay.github.io/projet_8_openclassrooms/remerciements",
+                    title: "Compétences de Jérémy Darbellay",
+                    description:
+                        "Vous retrouverez une vue d'ensemble de mes compétences sur cette page, ainsi que les différentes technologies que je maîtrise et mon parcours éducatif",
+                }}
+            />
             <div className={styles.container}>
                 <h1 className={styles.heading}>
                     Découvrez mon parcours et mes compétences
@@ -24,25 +35,26 @@ export default function Competences() {
                     <h2>Mon parcours</h2>
                     <p>
                         J'ai commencé mon parcours académique en étudiant la
-                        psychologie à l'université, où j'ai obtenu une licence et un
-                        master. J'ai acquis des compétences en recherche, en analyse
-                        de données et en communication, qui me sont utiles dans mon
-                        travail de développeur web. Après avoir découvert ma passion
-                        pour la technologie, j'ai suivi une formation
-                        professionnelle de développeur web chez OpenClassrooms, où
-                        j'ai travaillé sur une série de projets pratiques pour
-                        acquérir des compétences en développement front-end. Ces
-                        projets m'ont permis de maîtriser HTML, CSS et JavaScript,
-                        ainsi que des outils et des frameworks tels que Bootstrap,
-                        React et Next.js.
+                        psychologie à l'université, où j'ai obtenu une licence
+                        et un master. J'ai acquis des compétences en recherche,
+                        en analyse de données et en communication, qui me sont
+                        utiles dans mon travail de développeur web. Après avoir
+                        découvert ma passion pour la technologie, j'ai suivi une
+                        formation professionnelle de développeur web chez
+                        OpenClassrooms, où j'ai travaillé sur une série de
+                        projets pratiques pour acquérir des compétences en
+                        développement front-end. Ces projets m'ont permis de
+                        maîtriser HTML, CSS et JavaScript, ainsi que des outils
+                        et des frameworks tels que Bootstrap, React et Next.js.
                     </p>
                     <p>
-                        Je suis toujours en train d'apprendre et de perfectionner
-                        mes compétences, en suivant des cours en ligne et en
-                        travaillant sur des projets personnels et professionnels. Je
-                        suis persuadé que mes connaissances et mon engagement envers
-                        l'excellence technique me permettront de réaliser des
-                        projets web captivants et innovants.
+                        Je suis toujours en train d'apprendre et de
+                        perfectionner mes compétences, en suivant des cours en
+                        ligne et en travaillant sur des projets personnels et
+                        professionnels. Je suis persuadé que mes connaissances
+                        et mon engagement envers l'excellence technique me
+                        permettront de réaliser des projets web captivants et
+                        innovants.
                     </p>
                 </section>
                 <section>
