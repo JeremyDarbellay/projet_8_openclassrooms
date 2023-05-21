@@ -30,13 +30,14 @@ export default function Home() {
 
             <div className={`${styles.accueil} full-width`}>
                 <section className={styles.mainSection}>
+                    <div>
                     <Image
                         className={styles.officeImage}
                         src={OfficeImage}
                         alt="Un homme travaillant sur un ordinateur dans son bureau"
                         width="600"
                     />
-                    <div>
+                    <div className={styles.mainSectionText}>
                         <h1>Jérémy Darbellay en quelques mots</h1>
                         <p>
                             Bienvenue sur mon site personnel ! Je suis un
@@ -72,6 +73,8 @@ export default function Home() {
                                 Malt
                             </a>
                         </div>
+                    </div>
+
                     </div>
                 </section>
                 <section>
