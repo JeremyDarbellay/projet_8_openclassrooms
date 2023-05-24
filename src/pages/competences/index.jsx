@@ -70,17 +70,17 @@ const contentFront = [
     {
         title: "HTML5 et CSS3",
         content:
-            "Lors de mon deuxième projet, j'ai intégré une maquette via les langages HTML5 et CSS3. Ensuite, j'ai pu développer mes compétences dans ces deux langages sur mes autres projets par la création de sites internet, comme ces deux langages forment la base d'une page web, il sont inévitables et leur maîtrise est essentielle pour tout développeur web. Ainsi, je suis à l'aise avec la structure et la sémantique d'HTML5 pour la création de sites web, je maîtrise également, les principales propriétés et techniques pour créer des mises en page attrayantes et responsives.",
+            "Lors de mon deuxième projet, j'ai intégré une maquette via les langages HTML5 et CSS3. Ensuite, j'ai pu développer mes compétences dans ces deux langages sur mes autres projets par la création de sites internet, comme ces deux langages forment la base d'une page web, ils sont inévitables et leur maîtrise est essentielle pour tout développeur web. Ainsi, je suis à l'aise avec la structure et la sémantique d'HTML5 pour la création de sites web, je maîtrise également, les principales propriétés et techniques pour créer des mises en page attrayantes et responsives.",
     },
     {
         title: "Javascript",
         content:
-            "JavaScript est un langage de programmation complet, permettant une manipulation du DOM sans rechargement de la page. Je dispose aujourd'hui de plusieurs projets basés sur Javascript, allant de la manipulation de l'interface sans framework en utilisant les capacités du langage à la création d'un front complexe basé sur React.js et ses subtilités. Je vous coderai des scripts fonctionnels et dynamiques pour ajouter de l'intéractivité à vos pages Web.",
+            "JavaScript est un langage de programmation complet, permettant une manipulation du DOM sans rechargement de la page. Je dispose aujourd'hui de plusieurs projets basés sur Javascript, allant de la manipulation de l'interface sans framework en utilisant les capacités du langage à la création d'un front complexe basé sur React.js et ses subtilités. Je vous coderai des scripts fonctionnels et dynamiques pour ajouter de l'interactivité à vos pages Web.",
     },
     {
         title: "React.js et Next.js",
         content:
-            "Les technologies et besoins grandissant de web ont conduit à l'élaboration de librairies et de framework toujours plus poussées. Aujourd'hui React, une technologie développée par Facebook est devenu un outil essentiel et reconnu dans le milieu du web. J'ai pu développer un front entièrement grâce à cette librairie sans accumuler les dépendances externes, de plus au travers de ce portfolio, j'ai pu expérimenter le framework Next.js poussant un peu plus loin les capacités de React.",
+            "Les technologies et besoins grandissant de web ont conduit à l'élaboration de librairies et de framework toujours plus poussées. Aujourd'hui React, une technologie développée par Facebook, est devenue un outil essentiel et reconnu dans le milieu du web. J'ai pu développer un front entièrement grâce à cette librairie sans accumuler les dépendances externes, de plus au travers de ce portfolio, j'ai pu expérimenter le framework Next.js poussant un peu plus loin les capacités de React.",
     },
 ];
 
@@ -93,6 +93,6 @@ const contentBack = [
     {
         title: "PHP8, Drupal et MySQL",
         content:
-            "Pour un projet personnel, j'ai eu l'occasion de construire un site internet de A à Z, ayant le CMS (ou plutôt CMF) Drupal pour base. je suis parti de 0 pour ce projet, de la location d'un VPS jusqu'à la mise en ligne finale du site internet. J'ai donc pu expérimenté le full-stack lors de la conduite d'un projet complet de la conception à la mise en production.",
+            "Pour un projet personnel, j'ai eu l'occasion de construire un site internet de A à Z, ayant le CMS (ou plutôt CMF) Drupal pour base. je suis parti de 0 pour ce projet, de la location d'un VPS jusqu'à la mise en ligne finale du site internet. J'ai donc pu expérimenter le full-stack lors de la conduite d'un projet complet, de la conception à la mise en production.",
     },
 ];

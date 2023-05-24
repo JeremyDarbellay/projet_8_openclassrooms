@@ -112,12 +112,12 @@ export default function Home() {
                         pratiques.
                     </p>
                     <p>
-                        Ma formation m'a également permis de comprendre les
+                        Ma formation m'a aussi permis de comprendre les
                         bases de données et d'acquérir des compétences en
                         programmation côté serveur avec Node.js et MongoDB,
                         ainsi je pourrais également vous aider sur ce point et
-                        vous conseiller sur des options réelles et viables ou
-                        vous apporter des solutions à ma mesure.
+                        vous conseiller sur des options à la fois réelles et viables ou
+                        pour vous apporter des solutions à ma mesure.
                     </p>
                 </section>
                 <section>
@@ -143,8 +143,8 @@ export default function Home() {
                     </p>
                     <p>
                         Aimant les défis, j'ai essayé d'aller plus loin que les
-                        objectifs de chaque projets afin d'acquerir des
-                        compétences plus larges. vous retrouverez ces projets
+                        objectifs de chaque projet afin d'acquérir des
+                        compétences plus larges. Vous retrouverez ces projets
                         sur mon profil Github et sur ma page de projets.
                     </p>
                 </section>

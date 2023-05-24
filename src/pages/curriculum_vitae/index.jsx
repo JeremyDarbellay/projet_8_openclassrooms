@@ -80,7 +80,7 @@ export default function CurriculumVitae() {
             </div>
             <p>
                 Bienvenue sur la page de mon C.V., vous pourrez le télécharger
-                via le bouton au dessus, celui-ci va transformer le C.V. que
+                via le bouton au-dessus, celui-ci va transformer le C.V. que
                 vous voyez à l'écran en un document pdf, si vous êtes sur
                 mobile, vous pourrez télécharger une version préconçue de
                 celui-ci.
@@ -200,7 +200,7 @@ export default function CurriculumVitae() {
                                 <p>
                                     <em>React.js et ReactRouter</em>
                                     <br />
-                                    Construction du front-end pour une site de
+                                    Construction du front-end pour un site de
                                     location entre particuliers
                                 </p>
                                 <ul>
